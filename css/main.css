@@ -112,7 +112,6 @@ body {
 }
 
 .book-chapter .chapter-end-info {
-  border: 2px solid #e5e5e5;
   color: #e5e5e5;
   font-size: 14px;
   text-transform: uppercase;
@@ -128,7 +127,6 @@ body {
 
 .book-chapter .chapter-info {
   font-family: "Open Sans Regular", serif;
-  border: 2px solid #ff472b;
   display: inline-block;
   padding: 8px;
   font-size: 14px;
