@@ -692,5 +692,9 @@ body {
     background-size: 185px;
     background-position: 50% 601px;
   }
+
+  .facebook {
+    display: none;
+  }
 }
 
