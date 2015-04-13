@@ -388,10 +388,12 @@ body {
 }
 
 .testimonial blockquote cite a {
-  font-size: 16px;
+  font-size: 12px;
   display: inline-block;
   text-decoration: none;
+  text-transform: uppercase;
   color: #fff;
+  font-family: "Montserrat Black";
 }
 
 .pdf {
