@@ -480,6 +480,7 @@ body {
 .facebook {
   position: relative;
   min-height: 400px;
+  padding-top: 64px;
 }
 
 
@@ -542,6 +543,12 @@ body {
   font-weight: 100;
   margin-left: 10px;
   vertical-align: top;
+}
+
+.facebook .fb_iframe_widget {
+  width: 500px !important;
+  margin: auto !important;
+  display: block !important;
 }
 
 
