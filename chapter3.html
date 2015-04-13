@@ -82,10 +82,10 @@
     <p>In fact, we've already used an attribute when we were first building our web page! Remember the image code? You placed it in an HTML document with the following line:</p>
 
 <pre data-keep-tags="span"><code>&lt;img src="images/white-cat.jpg"&gt;</code></pre>
-<p>In this case, the <span class="highlight">&lt;img&gt;</span> tag was modified with the attribute <span class="highlight">src</span> with the value of "images/white-cat.jpg."</p>
+<p>In this case, the <span class="highlight">&lt;img&gt;</span> tag was modified with the attribute <span class="highlight">src</span> with the value of <span class="highlight">images/white-cat.jpg</span>.</p>
     <p>The tag by itself is only <span class="highlight">&lt;img&gt;</span>, so if we simply left it alone, the browser would have no way to retrieve the source of information to display. When we define a "src," we tell the browser, "Hey, load information from this source." The browser then knows it should look for the folder "images" and the file "white-cat.jpg." We can also pass a link to any resource on the web (if it's not restricted), for instance <a href="http://4.bp.blogspot.com/-z4sMggeD4dg/UO2TB9INuFI/AAAAAAAAdwc/Kg5dqlKKHrQ/s1600/funny-cat-pictures-032-025.jpg">http://4.bp.blogspot.com/-z4sMggeD4dg/UO2TB9INuFI/AAAAAAAAdwc/Kg5dqlKKHrQ/s1600/funny-cat-pictures-032-025.jpg</a>.</p>
     <p>This is the gist of how attributes work. Thanks to attributes, we can add rich and valuable information that is helpful for HTML tags.</p>
-    <p>Now let's return to our document and add in more necessary components. We'll be looking at the tag &lt;html&gt;, which contains elements that are not necessarily helpful to your page's content, but very helpful for search engines, browser tabs, and so on. For example, the title on a web page (or <span class="highlight">&lt;head&gt;</span>) helps search engines find your content.</p>
+    <p>Now let's return to our document and add in more necessary components. We'll be looking at the tag <span class="highlight">&lt;head&gt;</span>, which contains elements that are not necessarily helpful to your page's content, but very helpful for search engines, browser tabs, and so on. For example, the title on a web page helps search engines find your content.</p>
     
 <pre data-keep-tags="span"><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="en"</span>&gt;
@@ -96,7 +96,7 @@
   &lt;p&gt;For our client, The Cat Factory, &lt;strong&gt;we need a skilled web developer in HTML and CSS&lt;/strong&gt;. We offer a competitive salary, a bag of cat food, and toys.&lt;/p&gt;
   &lt;p&gt;Don't wait, apply now! Our crazy team is waiting for you right  meow!&lt;/p&gt;
 &lt;/html&gt;</code></pre>
-<p>At the moment, our <span class="highlight">head</span> tag is empty, but usually this is the location you want to put it, as the title of the whole document it sits at the top. As we create the page with our job offer, let's say that we decide on a title, "Job Offer: HTML and CSS developer." Let's go ahead an add it!</p>
+<p>At the moment, our <span class="highlight">head</span> tag is empty, but usually this is the location you want to put all meta information like the title of the whole document. As we create the page with our job offer, let's say that we decide on a title "Job Offer: HTML and CSS developer." Let's go ahead an add it!</p>
 <pre data-keep-tags="span"><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;</span>
   &lt;head&gt;
@@ -107,7 +107,7 @@
   &lt;p&gt;For our client, The Cat Factory, &lt;strong&gt;we need a skilled web developer in HTML and CSS&lt;/strong&gt;. We offer a competitive salary, a bag of cat food, and toys.&lt;/p&gt;
   &lt;p&gt;Don't wait, apply now! Our crazy team is waiting for you right  meow!&lt;/p&gt;
 &lt;/html&gt;</code></pre> 
-  <p>As you might have noticed, we added the title between the tag <span class="highlight">&lt;title&gt;</span>. What's the difference, and why did we do it anyway? The below image explains what happens where we don't have a <span class="highlight">&lt;title&gt;</span> tag (left), and our page that has the <span class="highlight">&lt;title&gt;</span> tag (right).</p>
+  <p>As you might have noticed, we added the title between the tag <span class="highlight">&lt;title&gt;</span>. What's the difference, and why did we do it that way? The below image explains what happens where we don't have a <span class="highlight">&lt;title&gt;</span> tag (left), and our page that has the <span class="highlight">&lt;title&gt;</span> tag (right). With title, our websites are more usable for browser user and navigating among many tabs is much easier.</p>
   <figure class="image"><img src="img/chapter3/job-post-title-comparison.png" alt=""></figure>
   <p>Another example might be my company website. I've used "Functionite - JavaScript workshop team" as a text inside title tag. Thus, it appears as that in Google search results:</p>
   <figure class="image"><img src="img/chapter3/functionite-title-google.png" alt=""></figure>
@@ -156,12 +156,12 @@ The requirements on the alt attribute's value are described in the next section.
   <blockquote><q class="quote">No character encoding information was found within the document, either in an HTML meta element or an XML declaration. It is often recommended to declare the character encoding in the document itself, especially if there is a chance that the document will be read from or saved to disk, CD, etc.</q></blockquote>
 
   <p>But not to worry, this is a simple warning. Before we try to understand it, let's examine the following example which will allow us to better understand the problem.</p>
-  <p>It's important to realize that your website may be visited by people from different countries like Spain, China or Sweden not to mention others. If you allow it, they can leave a comment or a message that might be displayed next to your articles. It's important to note though, that different countries use different languages with their own diacritical marks. In Swedish it can be ä or ö, while Chinese offer you a whole range of them like 汉语拼音方案. In the global web it's crucial to let different languages display correctly. Let's examine, what would happen, if we used Chinese language in our post:
+  <p>It's important to realize that your website may be visited by people from different countries like Spain, China or Sweden not to mention others. If you allow it, they can leave a comment or a message that might be displayed next to your articles. It's important to note though, that different countries use different languages with their own diacritical marks. In Swedish it can be ä or ö, while Chinese offer you a whole range of them like 汉语拼音方案. In the global web it's crucial to let different languages display correctly on the same page. Let's examine what would happen, if we used Chinese language in our post:
 
   <pre data-keep-tags="span"><code>&lt;p&gt;PS 再见&lt;/p&gt;</code></pre>
   <p>Let's check the effect in the browser:</p>
   <figure class="image"><img src="img/chapter3/utf-problem.png" alt=""></figure>
-  <p>Note the last line where, instead of a proper Chinese sentence, we can see some odd signs that don't make sense at all in any of modern languages. Don't panic, it's related to the warning that we have received in the HTML validator. It turns out that we haven't inserted a special line, that would allow other languages to display properly. In computers world, it's called <a href="http://en.wikipedia.org/wiki/Character_encoding">Character encoding</a>. If we pass this information to the HTML page, it "tells" the browser that it should be ready to display a wide range of characters including all different diacritical marks.</p>
+  <p>Note the last line where, instead of a proper Chinese sentence, we can see some odd signs that don't make sense at all in any of modern languages. Don't panic, it's related to the warning that we have received in the HTML validator. It turns out that we haven't inserted a special line, that would allow other languages to display properly. In computers world, it's called <a href="http://en.wikipedia.org/wiki/Character_encoding">Character encoding</a>. If we passed this information to the HTML page, it would "tell" the browser that it's ready to display a wide range of characters including all different diacritical marks.</p>
   <p>Let's do this!</p> 
   <pre data-keep-tags="span"><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;</span>

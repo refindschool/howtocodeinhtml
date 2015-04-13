@@ -24,7 +24,7 @@
     <p>The example of the menu, and the two pseudo-selectors will allow us to learn one more important concept. You may have noticed that each selector our CSS code consists of the same names as their respective HTML tags. So, whenever we change something in the structure of code we must also change the CSS. For example, sometimes it might be necessary to no longer have a heading:</p>
 
     <pre data-keep-tags="span"><code>&lt;h1&gt;Justin Beaver shaved his mustache&lt;/h1&gt;</code></pre>
-    <p>Let’s instead use the element <span class="highlight">&lt;p&gt;</span>:</p>
+    <p>Let's instead use the element <span class="highlight">&lt;p&gt;</span>:</p>
     <pre data-keep-tags="span"><code>&lt;p&gt;Justin Beaver shaved his mustache&lt;/p&gt;</code></pre>
 
     <p>With this change, we run the risk of errors in the display. To minimize this risk, we use CSS classes and IDs.</p>
@@ -37,7 +37,7 @@
 <p>You can also add multiple class names for a single tag:</p>
 <ul><li>&lt;p class="<span class="highlight">news-item</span> <span class="highlight">special-info</span>"&gt; – Class names "news-item" and "special-info"</li>
 <li>&lt;li class="<span class="highlight">menu-item</span> <span class="highlight">selected</span>"&gt; – Class names "menu-item" and "selected"</li></ul>
-<p>You might be wondering what this means and why classes are useful. Suppose that we create a page with information on sports news. Let us assume that we have a list of news and we want to highlight one item (I’ve highlighted one line of our list below). The code would look something like this:</p>
+<p>You might be wondering what this means and why classes are useful. Suppose that we create a page with information on sports news. Let us assume that we have a list of news and we want to highlight one item (I've highlighted one line of our list below). The code would look something like this:</p>
 
 <pre data-keep-tags="span"><code>&lt;article&gt;&lt;p&gt;normal news&lt;/p&gt;&lt;/article&gt;
 <span class="highlight">&lt;article&gt;&lt;p&gt;special news&lt;/p&gt;&lt;/article&gt;</span>
@@ -46,7 +46,7 @@
 &lt;article&gt;&lt;p&gt;normal news&lt;/p&gt;&lt;/article&gt;</code></pre>
 <p>If we wanted to write CSS code that distinguishes a special background for only the features news, we have a problem. Our expertise so far allows us to "style" all the elements in <span class="highlight">&lt;article&gt;</span> in the form of the selector: </p>
 <pre data-keep-tags="span"><code class="language-css">article {}</code></pre>
-<p>But this will look for all <span class="highlight">&lt;article&gt;</span> elements. CSS classes allow us to avoid this confusion. Let’s describe each of the <span class="highlight">&lt;article&gt;</span> elements with a class that corresponds to its importance for the entire site. So, let’s call the important news "main-news" and the rest "normal-news" as shown in the HTML code below:</p>
+<p>But this will look for all <span class="highlight">&lt;article&gt;</span> elements. CSS classes allow us to avoid this confusion. Let's describe each of the <span class="highlight">&lt;article&gt;</span> elements with a class that corresponds to its importance for the entire site. So, let's call the important news "main-news" and the rest "normal-news" as shown in the HTML code below:</p>
 
 <pre data-keep-tags="span"><code>&lt;article <span class="highlight">class="normal-news"</span>&gt;&lt;p&gt;normal news&lt;/p&gt;&lt;/article&gt;
 &lt;article <span class="highlight">class="main-news"</span>&gt;&lt;p&gt;special news&lt;/p&gt;&lt;/article&gt;
@@ -61,11 +61,11 @@
 .normal-news {
   background-color: LightYellow;
 }</code></pre>
-<p>For each class, note that they begin with a dot "." followed by the class name. So we can use this construction to target selector elements of the same class in HTML. The "main news" will now have a background color of light blue, while normals news is highlighted in LightYellow.</p>
+<p>For each class, note that they begin with a dot "." followed by the class name. So we can use this construction to target selector elements of the same class in HTML. The "main news" will now have a background color of light blue, while a normal news is coloured in LightYellow.</p>
 <p>In the browser, this code looks something like this:</p>
 <figure class="image"><img src="img/chapter7/featured-news.png" alt=""></figure>
-<p>Thanks to CSS classes, we can denote characteristics for specific elements on the page, that allows us to simultaneously target and ignore elements with the same tags. If we ever wanted to change &lt;article&gt; tag to something else, let's say &lt;p&gt;, we wouldn't need to modify our CSS code as well. That's a huge benefit.</p>
-<p>The essence of classes are explained in the following diagram:</p>
+<p>Thanks to CSS classes, we can denote characteristics for specific elements on the page, that allows us to simultaneously target and ignore elements with the same tags. If we ever wanted to change <span class="highlight">&lt;article&gt;</span> tag to something else, let's say <span class="highlight">&lt;p&gt;</span>, we wouldn't need to modify our CSS code as well. That's a huge benefit.</p>
+<p>The essence of classes is explained in the following diagram:</p>
 <figure class="image"><img src="img/chapter7/class-schema.png" alt=""></figure>
 <p>In addition to classes, we also have identifiers. We use the attribute called "id" and give it a value, very similar to how classes work. An example of an ID in HTML might look like this:</p>
 <pre data-keep-tags="span"><code class="language-markup">&lt;p <span class="highligt">id="main-content"</span>&gt;&lt;/p&gt;</code></pre>
@@ -74,13 +74,13 @@
   background-color: red;
 }</code></pre>
 <p>Instead of a "." before the element, we use a hashtag "#" for identifiers, followed by the element name. The code above specifies that elements with the ID "main-content" should have a red background.</p>
-<p>It’s very important to remember that <strong>identifiers are unique, so the identifier can only be used once in an HTML document</strong>. The use of the attribute "id" should be preceded by careful planning and analysis. It’s also good practice to not abuse "id" usage, as it is rare that good sites consists of several unique elements.</p>
+<p>It's very important to remember that <strong>identifiers are unique, so the identifier can only be used once in an HTML document</strong>. The use of the attribute "id" should be preceded by careful planning and analysis. It's also good practice to not abuse "id" usage, as it is rare that good sites consists of several unique elements.</p>
 
 <p>The operation of identifiers is summarized in the following diagram:</p>
 <figure class="image"><img src="img/chapter7/id-schema.png" alt=""></figure>
 
-<p>With our new knowledge of classes and identifiers, let’s rewrite our menu code to make it more robust against changes in the HTML file. Perhaps in the future we decide that we would like to make it using other tags than <span class="highligt">&lt;ul&gt;</span> and <span class="highligt">&lt;li&gt;</span>. If we use the appropriate classes, then we can sleep peacefully without having to worry about changing the CSS code in parallel.</p>
-<p>Let’s start by modifying our HTML. Currently, our code for the navigation menu currently looks like this:</p>
+<p>With our new knowledge of classes and identifiers, let's rewrite our menu code to make it more robust against changes in the HTML file. Perhaps in the future we decide that we would like to make it using other tags than <span class="highligt">&lt;ul&gt;</span> and <span class="highligt">&lt;li&gt;</span>. If we use the appropriate classes, then we can sleep peacefully without having to worry about changing the CSS code in parallel.</p>
+<p>Let's start by modifying our HTML. Currently, our code for the navigation menu currently looks like this:</p>
 <pre data-keep-tags="span"><code>&lt;nav&gt;
   &lt;ul&gt;
     &lt;li&gt;
@@ -97,7 +97,7 @@
     &lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;</code></pre>
-<p>Let’s introduce a class. We’ll give the entire container of the menu (tag <span class="highligt">&lt;ul&gt;</span>) a class, and each item under it (tag <span class="highligt">&lt;li&gt;</span>) a "child" class.</p>
+<p>Let's introduce a class. We'll give the entire container of the menu (tag <span class="highligt">&lt;ul&gt;</span>) a class, and each item under it (tag <span class="highligt">&lt;li&gt;</span>) a "child" class.</p>
 
 <pre data-keep-tags="span"><code>&lt;nav&gt;
   &lt;ul <span class="highlight">class="site-nav"</span>&gt;
@@ -116,7 +116,7 @@
   &lt;/ul&gt;
 &lt;/nav&gt;</code></pre>
 
-<p>For this menu, I’ve given the unordered list <span class="highligt">&lt;ul&gt;</span> the "site-nav" class, while each <span class="highligt">&lt;li&gt;</span> item has the class "site-nav-item." </p>
+<p>For this menu, I've given the unordered list <span class="highligt">&lt;ul&gt;</span> the "site-nav" class, while each <span class="highligt">&lt;li&gt;</span> item has the class "site-nav-item." </p>
 
 <p>Time to customize the CSS code:</p>
 <pre data-keep-tags="span"><code class="language-css">.site-nav {
@@ -148,7 +148,7 @@
 <figure class="image"><img src="img/chapter7/code-compare.png" alt=""></figure>
 
 <p>Try to compare each selector. As you can see, we traded the tag names for class names, which gives us much more flexibility in writing code. Note that they are shortened by removing the redundant "nav" tag. </p>
-<p>It’s important to try to use class names as selectors instead of tags, unless it is obvious like <span class="highlight">&lt;a&gt;</span> for addresses. This cannot be replaced with any other HTML tag. Identifiers are only used when the item is unique in the page. IN this cause, it could be just the menu, but often times navigation appears several times on a website (for example at the bottom and top).</p>
+<p>It's important to try to use class names as selectors instead of tags, unless it is obvious like <span class="highlight">&lt;a&gt;</span> for addresses. This cannot be replaced with any other HTML tag. Identifiers are only used when the item is unique in the page. In this cause, it could be just the menu, but oftentimes navigation appears several times on a website (for example at the bottom and top).</p>
 <p>The operation and definition of classes and IDs are summarized in the following diagram:</p>
 
 <figure class="image"><img src="img/chapter7/class-id-schema.png" alt=""></figure>

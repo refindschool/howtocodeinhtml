@@ -21,10 +21,7 @@
       <h1>Menu, Please!</h1>
       <p class="chapter-info">Chapter 6</p>
     </header>
-    <p>As you might have noticed in our CSS code, we used the same names as the HTML tag. In <span class="highlight">&lt;article&gt;</span> for example, we had to find <span class="highlight">&lt;figure&gt;</span> and then mirrored that in CSS so that a selector looked like this:</p>
-    
-    <pre data-keep-tags="span"><code class="language-css">article figure  { ... }</code></pre>
-    <p>However, there are others ways to refer to individual elements in CSS. One of them will be an example of a navigation menu on the web site. Remember that we are building HTML code which is then "styled" by the <span class="highlight">main.css</span> file. Here is the code for a simple navigation menu:</p>
+    <p>Another popular part of websites is menu. Basically, it's a list of items which are often just simple links pointing to other places on the site. Let's implement it! We will start with the following HTML code:
     <pre data-keep-tags="span"><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
   &lt;head&gt;
@@ -51,7 +48,7 @@
     &lt;/nav&gt;
   &lt;/body&gt;
 &lt;/html&gt;</code></pre>
-<p>This menu will consist of four items:</p>
+<p>Our menu will consist of four items:</p>
 
 <ul><li>Home</li>
 <li>Training</li>
@@ -60,15 +57,15 @@
 
 <p>We want it to look something like this:</p>
 <figure class="image"><img src="img/chapter6/menu-preview.png" alt=""></figure>
-<p>You might notice that under the <body> tag, we’ve added the new tags <span class="highlight">&lt;nav&gt;</span>, <span class="highlight">&lt;ul&gt;</span>, and <span class="highlight">&lt;li&gt;</span>.</p>
+<p>You might notice that under the <body> tag, we've added the new tags <span class="highlight">&lt;nav&gt;</span>, <span class="highlight">&lt;ul&gt;</span>, and <span class="highlight">&lt;li&gt;</span>.</p>
 
 <p><span class="highlight">&lt;nav&gt;</span> is used for specifying all kinds of navigation functions on websites that contain links to internal or external information. So putting <span class="highlight">&lt;nav&gt;</span> into the code says "everything inside <nav> will be used to navigate around the website."</p>
-<p>Within <span class="highlight">&lt;nav&gt;</span>, we place the <span class="highlight">&lt;ul&gt;</span> tag followed by several <span class="highlight">&lt;li&gt;</span> tags. The tag <span class="highlight">&lt;ul&gt;</span> represents an "unordered list" (like a bullet list) and the <span class="highlight">&lt;li&gt;</span> tags represent each individual component of that list (single bullet). When creating websites, it’s common that an unordered list will be the most reasonable choice when it comes to mapping menu pages. In fact, the menu is kind of a list of links that has been created without a predetermined rule as to the order of its elements.</p>
+<p>Within <span class="highlight">&lt;nav&gt;</span>, we place the <span class="highlight">&lt;ul&gt;</span> tag followed by several <span class="highlight">&lt;li&gt;</span> tags. The tag <span class="highlight">&lt;ul&gt;</span> represents an "unordered list" (like a bullet list) and the <span class="highlight">&lt;li&gt;</span> tags represent each individual component of that list (single bullet). When creating websites, it's common that an unordered list will be the most reasonable choice when it comes to mapping menu pages. In fact, the menu is kind of a list of links that has been created without a predetermined rule as to the order of its elements.</p>
 
 <p>With just the code above that is still unfinished, our list should be displayed as follows:</p>
 <figure class="image"><img src="img/chapter6/pure-list.png" alt=""></figure>
 <p>You might have seen something similar, even when creating a text document on a word processor, when you want to create a list with bullets. Without CSS <span class="highlight">&lt;ul&gt;</span>, however, our list would simply begin with a ".". In contrast, our menu can be much more complex. We can give it a border, color, background, etc. Each link is by default displayed in blue as seen in the image above. </p>
-<p>Let’s now try to produce a more stylized menu in our CSS code.</p>
+<p>Let's now try to produce a more stylized menu in our CSS code.</p>
 <p>Normally, we start from the most general tag in the HTML code, right? In this case, that top-most code begins with <span class="highlight">&lt;nav&gt;</span> since this is responsible for our navigation menu. Within this tag, there is not much to do since this tag does not deal directly with the changes of appearances for the bullet list. </p>
 <p>The next tag is then <span class="highlight">&lt;ul&gt;</span>, which begins the unordered list. We want our list to be displayed slightly differently than the default. The most important thing is to have a new background:</p>
 
@@ -78,7 +75,7 @@
 <p>For the background color we chose the name PaleVioletRed. Reloading the page shows our changes as a result of adding this code.</p>
 <figure class="image"><img src="img/chapter6/list-background.png" alt=""></figure>
 
-<p>Indeed, we’ve applied the color cyan as the background for the entire element of <span class="highlight">&lt;ul&gt;</span>. This is because we applies it to <span class="highlight">&lt;nav&gt;</span> and <span class="highlight">&lt;ul&gt;</span> tags, as per the following selector.</p>
+<p>Indeed, we've applied the color cyan as the background for the entire element of <span class="highlight">&lt;ul&gt;</span>. This is because we applies it to <span class="highlight">&lt;nav&gt;</span> and <span class="highlight">&lt;ul&gt;</span> tags, as per the following selector.</p>
 <pre data-keep-tags="span"><code class="language-css">nav ul {}</code></pre>
 
 <p>Now we want to get rid of the black, round dots in this list to make it look more like a menu. We can hide it, thanks to the property "list-style" as shown below:</p>
@@ -93,7 +90,7 @@
 
 <figure class="image"><img src="img/chapter6/menu-no-bullets.png" alt=""></figure>
 
-<p>The large swath of color is surprisingly big. We’re going to trim it down a bit using the same exercise as the image border earlier (e.g. padding).</p>
+<p>The large swath of color is surprisingly big. We're going to trim it down a bit using the same exercise as the image border earlier (e.g. padding).</p>
 <pre data-keep-tags="span"><code class="language-css">nav ul {
   background-color: PaleVioletRed;
   list-style: none;
@@ -102,14 +99,14 @@
 
 <p>As you can see below, it looks much better now, slowly approaching a nice form:</p>
 <figure class="image"><img src="img/chapter6/menu-no-padding.png" alt=""></figure>
-<p>Now it’s time to work on the dimensions. Our navigation has to be 200 pixels wide:</p>
+<p>Now it's time to work on the dimensions. Our navigation has to be 200 pixels wide:</p>
 <pre data-keep-tags="span"><code class="language-css">nav ul {
   background-color: PaleVioletRed;
   list-style: none;
   padding: 0;
   <span class="hightlight">width: 200px;</span>
 }</code></pre>
-<p>At the end, we’ll add a border to the list exactly like the image. It will be expressed as a solid line, with a 1 pixel width, and a "light blue" color:</p>
+<p>At the end, we'll add a border to the list exactly like the image. It will be expressed as a solid line, with a 1 pixel width, and a "light blue" color:</p>
 <pre data-keep-tags="span"><code class="language-css">nav ul {
   background-color: PaleVioletRed;
   list-style: none;
@@ -117,7 +114,7 @@
   width: 200px;
   <span class="highlight">border: 1px solid MediumVioletRed;</span>
 }</code></pre>
-<p>Here’s the result and it’s looking great!</p>
+<p>Here's the result and it's looking great!</p>
 <figure class="image"><img src="img/chapter6/menu-border.png" alt=""></figure>
 <p>So there is our beautiful outer frame. Time to frame each individual item in the list, which can be addressed using the following CSS selector:</p>
 <pre data-keep-tags="span"><code class="language-css">nav ul li {}</code></pre>
@@ -127,18 +124,18 @@
 <pre data-keep-tags="span"><code class="language-css">nav ul li {
   border-bottom: 1px solid MediumVioletRed;
 }</code></pre>
-<p>With this code, we’ve added a border-bottom, so every &lt;li&gt; item now has the same  border type as the outer border, on the bottom portion of the text.</p>
+<p>With this code, we've added a border-bottom, so every &lt;li&gt; item now has the same  border type as the outer border, on the bottom portion of the text.</p>
 <p>Currently, our menu should look like this:</p>
 <figure class="image"><img src="img/chapter6/menu-item-border.png" alt=""></figure>
 
-<p>We now have two problems. The first is the left-side spacing between the border and the elements list. Let’s change it using our friend "padding":</p>
+<p>We now have two problems. The first is the left-side spacing between the border and the elements list. Let's change it using our friend "padding":</p>
 
 <pre data-keep-tags="span"><code class="language-css">nav ul li {
   border-bottom: 1px solid MediumVioletRed;
   <span class="hightlight">padding: 5px;</span>
 }</code></pre>
 
-<p>It’s much better, right? We’ve added a 5 pixel wide padding between the text and the borders.</p>
+<p>It's much better, right? We've added a 5 pixel wide padding between the text and the borders.</p>
 
 <figure class="image"><img src="img/chapter6/menu-item-padding.png" alt=""></figure>
 
@@ -155,7 +152,7 @@
 <pre data-keep-tags="span"><code class="language-css">list-style: none;</code></pre>
 
 <p>So by setting "none" as a value we sort of disabling a property so it won't have any graphical effect.</p>
-<p>Let’s do the same thing, only using the property "bottom-border" and setting the value to "none." However, we want to target only the last item in the menu, so that its bottom border does not conflict with the larger bottom border.</p>
+<p>Let's do the same thing, only using the property "bottom-border" and setting the value to "none." However, we want to target only the last item in the menu, so that its bottom border does not conflict with the larger bottom border.</p>
 
 <pre data-keep-tags="span"><code class="language-css">nav ul li:last-child {
   border-bottom: none;
@@ -172,7 +169,7 @@
 <p>The last thing we need to do is to adjust the text in the links. You create links in HTML as follows:</p>
 <pre data-keep-tags="span"><code>&lt;a href="url"&gt;Text entered here will take you to the specified web address&lt;/a&gt;</code></pre>
 
-<p>We’re using the <span class="highlight">&lt;a&gt;</span> tag for address with the attribute <span class="highlight">href</span>. The value for this attribute should be the address to which you want to move the user if he or she clicks on the link. In our example, we have four links. One of them looks like this:</p>
+<p>We're using the <span class="highlight">&lt;a&gt;</span> tag along with the attribute <span class="highlight">href</span>. The value for this attribute should be the address to which you want to move the user if he or she clicks on the link. In our example, we have four links. One of them looks like this:</p>
 
 <pre data-keep-tags="span"><code>&lt;a href="training.html"&gt;Training&lt;/a&gt;</code></pre>
 
@@ -180,13 +177,13 @@
 <p>Knowing that this tag is a part of HTML code, we can create a special CSS selector that looks specifically for this tag:</p>
 <pre data-keep-tags="span"><code class="language-css">nav ul li a {}</code></pre>
 <p>Voilà!</p>
-<p>Let’s add new properties to our new selector. First of all, let’s change the font color to white.</p>
+<p>Let's add new properties to our new selector. First of all, let's change the font color to white.</p>
 <pre data-keep-tags="span"><code class="language-css">nav ul li a {
   color: white;
 }</code></pre>
 <p>Refreshing the browser shows our new changes:</p>
 <figure class="image"><img src="img/chapter6/menu-white.png" alt=""></figure>
-<p>Great! We now have white color links. Now let’s change some emphasis marks. The browser is set to highlight all links in the form of "text-decoration: underline" in CSS. We want to change this value, just like we did before by using the value "none."</p>
+<p>Great! We now have white color links. Now let's change some emphasis marks. The browser is set to highlight all links in the form of "text-decoration: underline" in CSS. We want to change this value, just like we did before by using the value "none."</p>
 <pre data-keep-tags="span"><code class="language-css">nav ul li a {
   color: white;
   <span class="highlight">text-decoration: none;</span>
@@ -198,7 +195,7 @@
 <figure class="image"><img src="img/chapter6/twitter.png" alt=""></figure>
 <p>When a mouse hovers over this link, something interesting happens that many internet users know well—the text becomes emphasized, or in this case, underlined:</p>
 <figure class="image"><img src="img/chapter6/twitter-hover.png" alt=""></figure>
-<p>Let’s try to do something similar in our menu that will allow a link to be highlighted or emphasized whenever we hover over it. We’ll use a pseudo-selector called "hover":</p>
+<p>Let's try to do something similar in our menu that will allow a link to be highlighted or emphasized whenever we hover over it. We'll use a pseudo-selector called "hover":</p>
 <pre data-keep-tags="span"><code class="language-css">nav ul li <span class="highlight">a:hover</span> {
   text-decoration: underline;
 }</code></pre>
@@ -237,7 +234,7 @@ nav ul li a:hover {
   text-decoration: underline;
 }</code></pre>
 <p>The newly emerged pseudo-selectors (last-child and hover) will be useful in the future.</p>
-<p>By the way, in this chapter you have learned how to use links and put them into HTML documents. At this point, we have used only addresses pointing to the local files (like training.html) saved on the computer, however you can also use links referring to external websites living on the web like this:</p>
+<p>By the way, in this chapter you have learned how to use links and put them into HTML documents. At this point, we have used only addresses pointing to the local files (like training.html) saved on your computer, however you can also use links referring to external websites living on the web like this:</p>
 <pre data-keep-tags="span"><code>&lt;a href="http://twitter.com/varjs"&gt;My Twitter&lt;/a&gt;</code></pre>
 <p>The above code in the browser will be displayed as <a href="http://twitter.com/varjs">My Twitter</a>. Note that the address contains "http://" at the very begininng. It's a rule to learn that every link you used in a HTML document that points to another website, must be prefixed by "http://". Otherwise, your links won't redirect users to the places they should.</p>
     <footer>
