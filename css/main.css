@@ -385,15 +385,18 @@ body {
 
 .testimonial blockquote cite {
   font-style: normal;
+  text-transform: uppercase;
+  color: #fff;
+  font-family: "Montserrat Black";
+  font-size: 12px;
+  display: inline-block;
+  text-decoration: none;
 }
 
 .testimonial blockquote cite a {
   font-size: 12px;
-  display: inline-block;
-  text-decoration: none;
-  text-transform: uppercase;
   color: #fff;
-  font-family: "Montserrat Black";
+  text-decoration: none;
 }
 
 .pdf {
