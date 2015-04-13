@@ -21,8 +21,8 @@
       <h1>Features of Perfect HTML Code</h1>
       <p class="chapter-info">Chapter 3</p>
     </header>
-    <p>At this point we’ve established our first website. Unfortunately, according to the current standards of good web pages, we are not yet complete. Just as engineers are held to strict design guidelines, or restaurants have health and safety regulations, so too do web developers have a top set of rules that define a job well done.</p>
-    <p>Let’s begin with the code we have so far, with all of the elements we’ve learned about:</p>
+    <p>At this point we've established our first website. Unfortunately, according to the current standards of good web pages, we are not yet complete. Just as engineers are held to strict design guidelines, or restaurants have health and safety regulations, so too do web developers have a top set of rules that define a job well done.</p>
+    <p>Let's begin with the code we have so far, with all of the elements we've learned about:</p>
     <pre data-keep-tags="span"><code>&lt;h1&gt;We're looking for an HTML and CSS developer.&lt;/h1&gt;
 &lt;img src="images/white-cat.jpg"&gt;
 &lt;p&gt;For our client, The Cat Factory, &lt;strong&gt;we need a skilled web developer in HTML and CSS&lt;/strong&gt;. We offer a competitive salary, a bag of cat food, and toys.&lt;/p&gt;
@@ -31,7 +31,7 @@
     <p>At the very top of any self-respecting HTML page, there should be an indication of the document type. This is the doctype:</p>
 
     <pre data-keep-tags="span"><code><span class="highlight">&lt;!DOCTYPE html&gt;</span>
-&lt;h1&gt;We're <strike>asdas</strike> for an HTML and CSS developer.&lt;/h1&gt;
+&lt;h1&gt;We're looking for an HTML and CSS developer.&lt;/h1&gt;
 &lt;img src="images/white-cat.jpg"&gt;
 &lt;p&gt;For our client, The Cat Factory, &lt;strong&gt;we need a skilled web developer in HTML and CSS&lt;/strong&gt;. We offer a competitive salary, a bag of cat food, and toys.&lt;/p&gt;
 &lt;p&gt;Don't wait, apply now! Our crazy team is waiting for you right  meow!&lt;/p&gt;</code></pre>
@@ -50,12 +50,12 @@
     <p>Note that this tag needs to be closed, so we want to be sure to add &lt;/html&gt; at the end:</p>
 
     <pre data-keep-tags="span"><code>&lt;!DOCTYPE html&gt;
-<span class="highlight">&lt;html&gt;</span>
+&lt;html&gt;
   code
 <span class="highlight">&lt;/html&gt;</span></code></pre>
 <p>As a result, everything that belongs to our website is contained under the tag <span class="highlight">&lt;html&gt;</span>. When writing HTML, it only makes sense that the code should be enclosed by <span class="highlight">&lt;html&gt;</span>.</p>
 
-<p>However, the <span class="highlight">&lt;html&gt;</span> tag is not yet complete. We want to add more information about the language of our site. Since this is an English example, let’s designate it as such:</p>
+<p>However, the <span class="highlight">&lt;html&gt;</span> tag is not yet complete. We want to add more information about the language of our site. Since this is an English example, let's designate it as such:</p>
     <pre data-keep-tags="span"><code>&lt;!DOCTYPE html&gt;
 &lt;html <span class="highlight">lang="en"</span>&gt;</span>
   &lt;h1&gt;We're looking for an HTML and CSS developer.&lt;/h1&gt;
@@ -72,20 +72,20 @@
       <li>&lt;p <span class="highlight">class="landscape"</span>&gt;&lt;/p&gt; - the name of the attribute is "class" and the value is "landscape"</li>
       <li>&lt;input <span class="highlight">type="text"</span>&gt; - the name of the attribute is "type", and the value is "text"</li>
     </ul>
-    <p>We use attributes because in many HTML tags (for example <span class="highlight">&lt;html&gt;</span>) do not contain all the information that we want to add. With attributes, we can modify the tags we use and add even more useful information to them. In this case, we have given the browser information that our HTML document is written in English, so we’ve modified the <span class="highlight">&lt;html&gt;</span> tag with the attribute "lang" and given it a value for "en" (English).</p>
+    <p>We use attributes because in many HTML tags (for example <span class="highlight">&lt;html&gt;</span>) do not contain all the information that we want to add. With attributes, we can modify the tags we use and add even more useful information to them. In this case, we have given the browser information that our HTML document is written in English, so we've modified the <span class="highlight">&lt;html&gt;</span> tag with the attribute "lang" and given it a value for "en" (English).</p>
     
 
     <p>Multiple attributes can even occur in a single tag. Here are a few example:</p>
     <pre data-keep-tags="span"><code>&lt;input type="text" value="enter text here"&gt;
 &lt;a href="http://functionite.com" title="We Train Developers"&gt;HTML Training&lt;/a&gt;</code></pre>
-    <p>It’s important to note that attributes are also part of HTML standards, just like nesting tags, and lists of these attributes, along with the tags that they can modify, can be found on the web.</p>
-    <p>In fact, we’ve already used an attribute when we were first building our web page! Remember the image code? You placed it in an HTML document with the following line:</p>
+    <p>It's important to note that attributes are also part of HTML standards, just like nesting tags, and lists of these attributes, along with the tags that they can modify, can be found on the web.</p>
+    <p>In fact, we've already used an attribute when we were first building our web page! Remember the image code? You placed it in an HTML document with the following line:</p>
 
 <pre data-keep-tags="span"><code>&lt;img src="images/white-cat.jpg"&gt;</code></pre>
 <p>In this case, the <span class="highlight">&lt;img&gt;</span> tag was modified with the attribute <span class="highlight">src</span> with the value of "images/white-cat.jpg."</p>
     <p>The tag by itself is only <span class="highlight">&lt;img&gt;</span>, so if we simply left it alone, the browser would have no way to retrieve the source of information to display. When we define a "src," we tell the browser, "Hey, load information from this source." The browser then knows it should look for the folder "images" and the file "white-cat.jpg." We can also pass a link to any resource on the web (if it's not restricted), for instance <a href="http://4.bp.blogspot.com/-z4sMggeD4dg/UO2TB9INuFI/AAAAAAAAdwc/Kg5dqlKKHrQ/s1600/funny-cat-pictures-032-025.jpg">http://4.bp.blogspot.com/-z4sMggeD4dg/UO2TB9INuFI/AAAAAAAAdwc/Kg5dqlKKHrQ/s1600/funny-cat-pictures-032-025.jpg</a>.</p>
     <p>This is the gist of how attributes work. Thanks to attributes, we can add rich and valuable information that is helpful for HTML tags.</p>
-    <p>Now let’s return to our document and add in more necessary components. We’ll be looking at the tag &lt;html&gt;, which contains elements that are not necessarily helpful to your page’s content, but very helpful for search engines, browser tabs, and so on. For example, the title on a web page (or <span class="highlight">&lt;head&gt;</span>) helps search engines find your content.</p>
+    <p>Now let's return to our document and add in more necessary components. We'll be looking at the tag &lt;html&gt;, which contains elements that are not necessarily helpful to your page's content, but very helpful for search engines, browser tabs, and so on. For example, the title on a web page (or <span class="highlight">&lt;head&gt;</span>) helps search engines find your content.</p>
     
 <pre data-keep-tags="span"><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="en"</span>&gt;
@@ -96,7 +96,7 @@
   &lt;p&gt;For our client, The Cat Factory, &lt;strong&gt;we need a skilled web developer in HTML and CSS&lt;/strong&gt;. We offer a competitive salary, a bag of cat food, and toys.&lt;/p&gt;
   &lt;p&gt;Don't wait, apply now! Our crazy team is waiting for you right  meow!&lt;/p&gt;
 &lt;/html&gt;</code></pre>
-<p>At the moment, our <span class="highlight">head</span> tag is empty, but usually this is the location you want to put it, as the title of the whole document it sits at the top. As we create the page with our job offer, let’s say that we decide on a title, "Job Offer: HTML and CSS developer." Let’s go ahead an add it!</p>
+<p>At the moment, our <span class="highlight">head</span> tag is empty, but usually this is the location you want to put it, as the title of the whole document it sits at the top. As we create the page with our job offer, let's say that we decide on a title, "Job Offer: HTML and CSS developer." Let's go ahead an add it!</p>
 <pre data-keep-tags="span"><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;</span>
   &lt;head&gt;
@@ -107,11 +107,11 @@
   &lt;p&gt;For our client, The Cat Factory, &lt;strong&gt;we need a skilled web developer in HTML and CSS&lt;/strong&gt;. We offer a competitive salary, a bag of cat food, and toys.&lt;/p&gt;
   &lt;p&gt;Don't wait, apply now! Our crazy team is waiting for you right  meow!&lt;/p&gt;
 &lt;/html&gt;</code></pre> 
-  <p>As you might have noticed, we added the title between the tag <span class="highlight">&lt;title&gt;</span>. What’s the difference, and why did we do it any way? The below image explains what happens where we don’t have a <span class="highlight">&lt;title&gt;</span> tag (left), and our page that has the <span class="highlight">&lt;title&gt;</span> tag (right).</p>
+  <p>As you might have noticed, we added the title between the tag <span class="highlight">&lt;title&gt;</span>. What's the difference, and why did we do it anyway? The below image explains what happens where we don't have a <span class="highlight">&lt;title&gt;</span> tag (left), and our page that has the <span class="highlight">&lt;title&gt;</span> tag (right).</p>
   <figure class="image"><img src="img/chapter3/job-post-title-comparison.png" alt=""></figure>
   <p>Another example might be my company website. I've used "Functionite - JavaScript workshop team" as a text inside title tag. Thus, it appears as that in Google search results:</p>
   <figure class="image"><img src="img/chapter3/functionite-title-google.png" alt=""></figure>
-  <p>As you can see, this is a very important to consider when coding your site. Without it, the site would be without a name, which would leave a bad impression on visitors. Personally, I wouldn’t trust a page that doesn’t even have a title.
+  <p>As you can see, this is a very important to consider when coding your site. Without it, the site would be without a name, which would leave a bad impression on visitors. Personally, I wouldn't trust a page that doesn't even have a title.
 </p>
 <p>We need to do one more thing after adding a head, and that is to add the <span class="highlight">&lt;body&gt;</span> tag. This separates the content of the entire page from the head. Everything displayed on your web page will be placed within <span class="highlight">&lt;body&gt;</span>.</p>
 <pre data-keep-tags="span"><code>&lt;!DOCTYPE html&gt;
@@ -127,26 +127,26 @@
   <span class="highlight">&lt;/body&gt;</span>
 &lt;/html&gt;</code></pre> 
 
-  <p>Hooray! It looks like the end of our efforts and it seems that everything is correct. As a novice coder, it’s probably a good idea to check if everything is OK (e.g. nested tags, good attributes, etc.). But not everyone has friends among advanced HTML developers, who may be asked for consultation.
+  <p>Hooray! It looks like the end of our efforts and it seems that everything is correct. As a novice coder, it's probably a good idea to check if everything is OK (e.g. nested tags, good attributes, etc.). But not everyone has friends among advanced HTML developers, who may be asked for consultation.
 Luckily, there is a special tool we can use to check if our code is correct. The W3C organization, the same group that defines the standards and upholds best practices of HTML documents, has made a tool to check code. The tool is simply called an HTML validator, and is available at <a href="http://validator.w3.org">http://validator.w3.org</a>.</p>
 <p>The page should look like the one below:</p>
   <figure class="image"><img src="img/chapter3/w3c-validator.png" alt=""></figure>
-  <p>Let’s use the tool and check to see if our code is correct.</p>
+  <p>Let's use the tool and check to see if our code is correct.</p>
   <figure class="image"><img src="img/chapter3/w3c-validator-error.png" alt=""></figure>
-  <p>...Woops! We have one error and 3 warnings. Let’s take a look at them.</p>
-  <p>The single error that the validator reported has to do with our image. Let’s take a look at the content of the error:</p>
+  <p>...Woops! We have one error and 3 warnings. Let's take a look at them.</p>
+  <p>The single error that the validator reported has to do with our image. Let's take a look at the content of the error:</p>
   <blockquote>An img element must have an alt attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.</blockquote>
-  <p>It turns out that the <span class="highlight">&lt;img&gt;</span> tag in your document must always have the "alt" attribute that will be used in case the browser cannot load the image. It will then display the value of this alternate attribute instead (it’s better than an empty space, right?).</p>
-  <p>Before we choose the value for the attribute "alt," let’s look at the HTML specification to make sure that we do it correctly:</p>
+  <p>It turns out that the <span class="highlight">&lt;img&gt;</span> tag in your document must always have the "alt" attribute that will be used in case the browser cannot load the image. It will then display the value of this alternate attribute instead (it's better than an empty space, right?).</p>
+  <p>Before we choose the value for the attribute "alt," let's look at the HTML specification to make sure that we do it correctly:</p>
   <p>Here is the page where we can check it: <a href="http://www.w3.org/wiki/HTML/Elements/img">W3C</a>:</p>
   <blockquote><q class="quote">Gives the fallback content for the image.
 The requirements on the alt attribute's value are described in the next section.</q></blockquote>
 <p>It then further distinguishes several scenarios, for when and how to use the alt attribute. In our case, we are dealing with an image that has been placed for decoration of the post and does not contain any content, plot, or other information to the reader. In this case, we should leave the alternate attribute empty, says the specification:</p>
   <blockquote><q class="quote">However, a decorative image that isn't discussed by the surrounding text but still has some relevance can be included in a page using the img element. Such images are decorative, but still form part of the content. In these cases, the alt attribute must be present but its value must be the empty string.</q></blockquote>
-  <p>W innych przypadkach powinniśmy wybrać taką treść, która słownie zastępowałaby to, co znajduje się na danym obrazku. Bardzo ważne jest, aby zapamiętać, że nie chodzi o sam opis grafiki, a o tekst, który byłby reprezentacją obrazka, gdybyśmy nie mogli go z różnych przyczyn załadować (np. brak internetu, usunięcie materiału z serwera i tak dalej).</p>
+  
   <p>In other cases, we would want to choose a text string that might replace what is on the picture. Detailed guidelines for several distinguished cases can be found at the specification for the &lt;img&gt; tag here: <a href="http://www.w3.org/wiki/HTML/Elements/img">http://www.w3.org/wiki/HTML/Elements/img</a>.</p>
   <p>Ok, so we know that we want to have the "alt" attribute empty. </p>
-  <p>Let’s add it...</p>
+  <p>Let's add it...</p>
 <pre data-keep-tags="span"><code>&lt;img src="images/white-cat.jpg" <span class="highlight">alt=""</span>&gt;</code></pre>
   <p>...And then check our document against the validator again.</p>
   <figure class="image"><img src="img/chapter3/w3c-validator-valid.png" alt=""></figure>
@@ -155,7 +155,7 @@ The requirements on the alt attribute's value are described in the next section.
 
   <blockquote><q class="quote">No character encoding information was found within the document, either in an HTML meta element or an XML declaration. It is often recommended to declare the character encoding in the document itself, especially if there is a chance that the document will be read from or saved to disk, CD, etc.</q></blockquote>
 
-  <p>But not to worry, this is a simple warning. Before we try to understand it, let’s examine the following example which will allow us to better understand the problem.</p>
+  <p>But not to worry, this is a simple warning. Before we try to understand it, let's examine the following example which will allow us to better understand the problem.</p>
   <p>It's important to realize that your website may be visited by people from different countries like Spain, China or Sweden not to mention others. If you allow it, they can leave a comment or a message that might be displayed next to your articles. It's important to note though, that different countries use different languages with their own diacritical marks. In Swedish it can be ä or ö, while Chinese offer you a whole range of them like 汉语拼音方案. In the global web it's crucial to let different languages display correctly. Let's examine, what would happen, if we used Chinese language in our post:
 
   <pre data-keep-tags="span"><code>&lt;p&gt;PS 再见&lt;/p&gt;</code></pre>
@@ -185,8 +185,8 @@ The requirements on the alt attribute's value are described in the next section.
   </article>
   <nav class="book-nav" role="navigation">
     <ul class="book-chapter-menu">
-        <li class="book-chapter-menu__item next-chapter"><span class="chapter-number">Chapter 4</span><a href="chapter4.html">HTML Exercise: Encoding an Article to a Blog</a></li>
-        <li class="book-chapter-menu__item prev-chapter"><span class="chapter-number">Chapter 2</span><a href="chapter2.html">Let’s build our first website</a></li>
+        <li class="book-chapter-menu__item next-chapter"><span class="chapter-number">Chapter 4</span><a href="chapter4.html">HTML Exercise: Coding a Blogpost</a></li>
+        <li class="book-chapter-menu__item prev-chapter"><span class="chapter-number">Chapter 2</span><a href="chapter2.html">Let's build our first website</a></li>
     </ul>
   </nav>
   <script src="js/prism.js"></script>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="language-markup">
 <head>
-  <title>Chapter 4: HTML Exercise: Encoding an Article to a Blog</title>
+  <title>Chapter 4: HTML Exercise: Coding a Blogpost</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
@@ -18,14 +18,14 @@
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
   <article class="book-chapter" role="main">
     <header>
-      <h1>HTML Exercise: Encoding an Article to a Blog</h1>
+      <h1>HTML Exercise: Coding a Blogpost</h1>
       <p class="chapter-info">Chapter 4</p>
     </header>
-    <p>Time for another exercise that will show you the philosophy of writing more advanced websites in HTML5. We’ll try to produce the following example as a website, an article on a blog.</p>
+    <p>Time for another exercise that will show you the philosophy of writing more advanced websites in HTML5. We'll try to produce the following example as a website, an article on a blog.</p>
     
     <figure class="image"><img src="img/chapter4/blogpost-preview.png" alt=""></figure>
     <p>Note that here we have one header for the article. In addition, information about the author, as well as a photo and a "quote" paragraph. It is worth noting that as a front-end web developer, you will often receive graphic designs (like the one shown above) and have to recreate everything in HTML.</p>
-    <p>Let’s begin with the elements which will always be fixed and do not change. As we did earlier, we want the doctype tag, <span class="highlight">&lt;html&gt;</span>, the <span class="highlight">&lt;head&gt;</span> and <span class="highlight">&lt;body&gt;</span>. Note that in our <span class="highlight">&lt;head&gt;</span> we’ll want to make sure we have character encoding for "utf-8" so that we can display special characters on our site. 
+    <p>Let's begin with the elements which will always be fixed and do not change. As we did earlier, we want the doctype tag, <span class="highlight">&lt;html&gt;</span>, the <span class="highlight">&lt;head&gt;</span> and <span class="highlight">&lt;body&gt;</span>. Note that in our <span class="highlight">&lt;head&gt;</span> we'll want to make sure we have character encoding for "utf-8" so that we can display special characters on our site. 
     <p>Our starting template for the code will look like this:</p>
 <pre data-keep-tags="span"><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
@@ -35,7 +35,7 @@
   &lt;body&gt;
   &lt;/body&gt;
 &lt;/html&gt;</code></pre>
-    <p>Let’s add the title now:</p>
+    <p>Let's add the title now:</p>
     <pre data-keep-tags="span"><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
   &lt;head&gt;
@@ -45,9 +45,9 @@
   &lt;body&gt;
   &lt;/body&gt;
 &lt;/html&gt;</code></pre>
-    <p>At this point, we’ve finished the template which will now serve as the basis for the contents of the article.</p>
+    <p>At this point, we've finished the template which will now serve as the basis for the contents of the article.</p>
     <p>If we save the file as <span class="highlight">article.html</span>, and then open in a browser, we will see nothing at all because the <span class="highlight">&lt;body&gt;</span> tag has no content.</p>
-    <p>We generally start from the most general content, followed by more specific, detailed content as we progress. Let’s analyze our pieces:</p>
+    <p>We generally start from the most general content, followed by more specific, detailed content as we progress. Let's analyze our pieces:</p>
     <ol>
     <li>In the article, the most important information would probably be the header information which contains the title: "Justin Beaver: Ever since I learned HTML, my life has made a complete 180."</li><li>The next most important information is about the author, "authored by Damian Wielgosik."</li>
     <li> The first paragraph of text comes next, then a place for a photo and its description.</li>
@@ -68,7 +68,7 @@
   &lt;/body&gt;
 &lt;/html&gt;</code></pre>
   <p>You might have noticed that we used the <span class="highlight">&lt;article&gt;</span> element which is contained within the <span class="highlight">&lt;body&gt;</span> parent. Articles consist of a header and content, so all tags representing heading and paragraphs will naturally be children of <span class="highlight">&lt;article&gt;</span>.</p>
-    <p>Adding to our list of elements that we’ve discovered so far, we’re going to now use an element that marks headers, the <span class="highlight">&lt;header&gt;</span> tag.</p>
+    <p>Adding to our list of elements that we've discovered so far, we're going to now use an element that marks headers, the <span class="highlight">&lt;header&gt;</span> tag.</p>
     <p>We can add the <span class="highlight">&lt;header&gt;</span> code as a child of <span class="highlight">&lt;article&gt;</span>. As we move from top to bottom in the code (in terms of importance), note that we also move rightwards with indentations to show that an element is lower on the hierarchy than its above component. In the example below, <span class="highlight">&lt;header&gt;</span> is not only below <span class="highlight">&lt;article&gt;</span>, but also indented to show where it is on the hierarchy.</p>
     
 
@@ -85,8 +85,8 @@
     &lt;/article&gt;
   &lt;/body&gt;
 &lt;/html&gt;</code></pre>
-    <p>Our header section is now ready, but what should go inside the <span class="highlight">&lt;header&gt;</span>? Well, we discussed earlier that we have a title and author. We’ll use the tag <span class="highlight">&lt;h1&gt;</span> for the title of the text, and <span class="highlight">&lt;p&gt;</span> for the author. There is no specific HTML tag for author, so in this case we’re using <span class="highlight">&lt;p&gt;</span> as a general container for a text.</p>
-    <p>In the code below, we’ve added <span class="highlight">&lt;h1&gt;</span> and <span class="highlight">&lt;p&gt;</span> tags to the header element:</p>
+    <p>Our header section is now ready, but what should go inside the <span class="highlight">&lt;header&gt;</span>? Well, we discussed earlier that we have a title and author. We'll use the tag <span class="highlight">&lt;h1&gt;</span> for the title of the text, and <span class="highlight">&lt;p&gt;</span> for the author. There is no specific HTML tag for author, so in this case we're using <span class="highlight">&lt;p&gt;</span> as a general container for a text.</p>
+    <p>In the code below, we've added <span class="highlight">&lt;h1&gt;</span> and <span class="highlight">&lt;p&gt;</span> tags to the header element:</p>
         <pre data-keep-tags="span"><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
   &lt;head&gt;
@@ -111,14 +111,14 @@
       <li>&lt;h6&gt;</li>
     </ul>
     <p>These elements help to map the logical structure of headings and subheadings. So for example, if we were writing in book format, its title would be contained between the element <span class="highlight">&lt;h1&gt;</span>. Then, the names of the chapters will be tagged with <span class="highlight">&lt;h2&gt;</span>, and subsections <span class="highlight">&lt;h3&gt;</span>. </p>
-    <p>Note that you shouldn’t simply denote a header as <span class="highlight">&lt;h4&gt;</span> on a whim. Headers must be nested under a higher priority header, so if you have <span class="highlight">&lt;h4&gt;</span>, <span class="highlight">&lt;h3&gt;</span> must occur before it, and <span class="highlight">&lt;h2&gt;</span> must occur before that, and so on.</p>
+    <p>Note that you shouldn't simply denote a header as <span class="highlight">&lt;h4&gt;</span> on a whim. Headers must be nested under a higher priority header, so if you have <span class="highlight">&lt;h4&gt;</span>, <span class="highlight">&lt;h3&gt;</span> must occur before it, and <span class="highlight">&lt;h2&gt;</span> must occur before that, and so on.</p>
     <p>For example, this book could look like this:</p>
     <pre><code>&lt;h1&gt;Simple HTML5&lt;/h1&gt;
 &lt;h2&gt;My first website&lt;/h2&gt;
 &lt;h3&gt;W3C Validator&lt;/h3&gt;
 &lt;h2&gt;Meet CSS&lt;/h2&gt;
 &lt;h3&gt;Selectors in CSS&lt;/h3&gt;</code></pre>
-    <p>Let’s move on to coding the first paragraph of text. We want to avoid nesting the paragraph under the <span class="highlight">&lt;header&gt;</span>. It makes sense that the paragraph should be part of the <span class="highlight">&lt;article&gt;</span>. So, we’ll add the first <span class="highlight">&lt;p&gt;</span> within <span class="highlight">&lt;article&gt;</span>, with the same priority as <span class="highlight">&lt;header&gt;</span>, but underneath it:</p>
+    <p>Let's move on to coding the first paragraph of text. We want to avoid nesting the paragraph under the <span class="highlight">&lt;header&gt;</span>. It makes sense that the paragraph should be part of the <span class="highlight">&lt;article&gt;</span>. So, we'll add the first <span class="highlight">&lt;p&gt;</span> within <span class="highlight">&lt;article&gt;</span>, with the same priority as <span class="highlight">&lt;header&gt;</span>, but underneath it:</p>
     
 <pre data-keep-tags="span"><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
@@ -132,11 +132,11 @@
         &lt;h1&gt;Justin Beaver: Ever since I learned HTML, my life has made a complete 180&lt;/h1&gt;
         &lt;p&gt;Posted by: Damian Wielgosik&lt;/p&gt;
       &lt;/header&gt;
-      <span class="highlight">&lt;p&gt;Justin Beaver confessed something that even his greatest fans would have never expected of the skilled musicians and lyricist. The young rock-and-roller admitted that since he typed his first title tag, his life became easier. It has been reported by those surrounding the Canadian that Beaver’s private mentors, Ryan Loseling and Nicolas Crate, often walk around Los Angeles disputing what a great tool the HTML validator is.&lt;/p&gt;</span>
+      <span class="highlight">&lt;p&gt;Justin Beaver confessed something that even his greatest fans would have never expected of the skilled musicians and lyricist. The young rock-and-roller admitted that since he typed his first title tag, his life became easier. It has been reported by those surrounding the Canadian that Beaver's private mentors, Ryan Loseling and Nicolas Crate, often walk around Los Angeles disputing what a great tool the HTML validator is.&lt;/p&gt;</span>
     &lt;/article&gt;
   &lt;/body&gt;
 &lt;/html&gt;</code></pre>
-  <p>Next we’ll add the photo plus a description. For this type of content, and therefore all related to the entire document such as photos, charts or maps, we’ll use the <span class="highlight">&lt;figure&gt;</span> tag. It is worth noting that the <span class="highlight">&lt;figure&gt;</span> condition of use is important into that you can use the extra element <span class="highlight">&lt;figcaption&gt;</span>, which puts a description of the image beneath it.</p>
+  <p>Next we'll add the photo plus a description. For this type of content, and therefore all related to the entire document such as photos, charts or maps, we'll use the <span class="highlight">&lt;figure&gt;</span> tag. It is worth noting that the <span class="highlight">&lt;figure&gt;</span> condition of use is important into that you can use the extra element <span class="highlight">&lt;figcaption&gt;</span>, which puts a description of the image beneath it.</p>
  
   <pre data-keep-tags="span"><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
@@ -150,16 +150,16 @@
         &lt;h1&gt;Justin Beaver: Ever since I learned HTML, my life has made a complete 180&lt;/h1&gt;
         &lt;p&gt;Posted by: Damian Wielgosik&lt;/p&gt;
       &lt;/header&gt;
-      &lt;p&gt;Justin Beaver confessed something that even his greatest fans would have never expected of the skilled musicians and lyricist. The young rock-and-roller admitted that since he typed his first title tag, his life became easier. It has been reported by those surrounding the Canadian that Beaver’s private mentors, Ryan Loseling and Nicolas Crate, often walk around Los Angeles disputing what a great tool the HTML validator is.&lt;/p&gt;
+      &lt;p&gt;Justin Beaver confessed something that even his greatest fans would have never expected of the skilled musicians and lyricist. The young rock-and-roller admitted that since he typed his first title tag, his life became easier. It has been reported by those surrounding the Canadian that Beaver's private mentors, Ryan Loseling and Nicolas Crate, often walk around Los Angeles disputing what a great tool the HTML validator is.&lt;/p&gt;
       <span class="highlight">&lt;figure&gt;
         &lt;img src="cat.jpg" alt="Justin Beaver's cat is pleased"&gt;
-        &lt;figcaption>Justin Beaver’s happy cat&lt;/figcaption&gt;
+        &lt;figcaption>Justin Beaver's happy cat&lt;/figcaption&gt;
       &lt;/figure&gt;</span>
     &lt;/article&gt;</span>
   &lt;/body&gt;
 &lt;/html&gt;</code></pre>
-  <p>After we’ve added the image, we just have one more paragraph to add to the article. Note that this paragraph has a quote, "I will probably have a song about HTML on my next album." We can annotate this quote so that our code has a greater semantic value. Perhaps in the future, someone will look for quotes from Justin Beaver, and this designation will help them find the quote faster. Otherwise, search engines would always have to deal with one huge mass of text. </p>
-  <p>In order to indicate that a section of text is a quote, we’re going to use the <span class="highlight">&lt;q&gt;</span> tag within the new paragraph:</q>
+  <p>After we've added the image, we just have one more paragraph to add to the article. Note that this paragraph has a quote, "I will probably have a song about HTML on my next album." We can annotate this quote so that our code has a greater semantic value. Perhaps in the future, someone will look for quotes from Justin Beaver, and this designation will help them find the quote faster. Otherwise, search engines would always have to deal with one huge chunk of text. </p>
+  <p>In order to indicate that a section of text is a quote, we're going to use the <span class="highlight">&lt;q&gt;</span> tag within the new paragraph:</q>
  <pre data-keep-tags="span"><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
   &lt;head&gt;
@@ -172,10 +172,10 @@
         &lt;h1&gt;Justin Beaver: Ever since I learned HTML, my life has made a complete 180&lt;/h1&gt;
         &lt;p&gt;Posted by: Damian Wielgosik&lt;/p&gt;
       &lt;/header&gt;
-      &lt;p&gt;Justin Beaver confessed something that even his greatest fans would have never expected of the skilled musicians and lyricist. The young rock-and-roller admitted that since he typed his first title tag, his life became easier. It has been reported by those surrounding the Canadian that Beaver’s private mentors, Ryan Loseling and Nicolas Crate, often walk around Los Angeles disputing what a great tool the HTML validator is.&lt;/p&gt;
+      &lt;p&gt;Justin Beaver confessed something that even his greatest fans would have never expected of the skilled musicians and lyricist. The young rock-and-roller admitted that since he typed his first title tag, his life became easier. It has been reported by those surrounding the Canadian that Beaver's private mentors, Ryan Loseling and Nicolas Crate, often walk around Los Angeles disputing what a great tool the HTML validator is.&lt;/p&gt;
       &lt;figure&gt;
         &lt;img src="cat.jpg" alt="Justin Beaver's cat is pleased"&gt;
-        &lt;figcaption>Justin Beaver’s happy cat&lt;/figcaption&gt;
+        &lt;figcaption>Justin Beaver's happy cat&lt;/figcaption&gt;
       &lt;/figure&gt;
       &lt;p&gt;Beaver has already created some websites and does not intend to stop there. <span class="highlight">&lt;q&gt;I will probably have a song about HTML on my next album,&lt;/q&gt;</span> - the artist added.
       &lt;/p&gt;
@@ -184,8 +184,8 @@
 &lt;/html&gt;</code></pre>
       
 
-    <p>Now, let’s save the code to a file with the extension .html and display it in the browser.</p>
-    <p>You have now completed your second page. Great! This is another step to becoming a professional creator of the web pages.</p>
+    <p>Now, let's save the code to a file with the extension .html and display it in the browser.</p>
+    <p>You have now completed your second page. Great! This is another step to becoming a professional web developer.</p>
     <footer>
         <p class="chapter-end-info">End Of Chapter 4</p>
     </footer>    

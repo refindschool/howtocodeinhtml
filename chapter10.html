@@ -21,10 +21,9 @@
     <h1>Differences Between &lt;div&gt; and &lt;span&gt;</h1>
     <p class="chapter-info">Chapter 10</p>
   </header>    
-  <p>The elements from last chapter appear one after the other on the same horizontal line. It shouldn’t be surprising, as <span class="highlight">&lt;label&gt;</span>, <span class="highlight">&lt;input&gt;</span>, and <span class="highlight">&lt;textarea&gt;</span> are all elements of one group called inline-block — the browser does not know where else to put them.</p>
-  <p>These elements are behaving as plain text, and will just be displayed one next to the other, even though they have certain sizes and other properties that don't apply to texts.</p>
+  <p>The elements from last chapter appear one after the other on the same horizontal line. It shouldn't be surprising, as <span class="highlight">&lt;label&gt;</span>, <span class="highlight">&lt;input&gt;</span>, and <span class="highlight">&lt;textarea&gt;</span> are all elements of one group called inline-block — the browser does not know where else to put them. These elements are behaving as plain text, and will just be displayed one next to the other, even though they have certain sizes and other properties that don't apply to texts.</p>
   <p>Let's figure out how to make them display one after the other vertically. We need to tell the browser, "Hey, we want a container which can be vertically stacked." This container tag is known as <span class="highlight">&lt;div&gt;</span>, and will sort of "break" content to new lines (like page breaks or line breaks in word processors).</p>
-  <p>To see how the <span class="highlight">&lt;div&gt;</span> elements work, let’s use our code in three of these and let’s call them width, height, and background:</p>
+  <p>To see how the <span class="highlight">&lt;div&gt;</span> elements work, let's use our code in three of these and let's call them width, height, and background:</p>
   <p>Under the assumptions given above, the HTML will look like this:</p>
   <pre data-keep-tags="span"><code class="language-markup">&lt;div class="container"&gt;&lt;/div&gt;
 &lt;div class="container"&gt;&lt;/div&gt;
@@ -44,7 +43,7 @@
   background-color: blue;
   <span class="highlight">margin-bottom: 10px;</span>
 }</code></pre>
-<p>I added a margin-bottom property (highlighted above) to separate each &lt;div&gt; by 10 pixels from the bottom. Now it’s time to check the effect in browser:</p>
+<p>I added a margin-bottom property (highlighted above) to separate each &lt;div&gt; by 10 pixels from the bottom. Now it's time to check the effect in browser:</p>
 <figure class="image"><img src="img/chapter10/blue-blocks-separated.png" alt=""></figure>
 <p>Now the browser displays these "blocks" one by one, in contrast to our previous example where the elements appeared on the same line.</p>
 <p>Why is this different? When it comes to the display of tags, the browser recognizes three groups of elements:</p>
@@ -52,7 +51,7 @@
 <li>block-level</li>
 <li>inline block-level</li></ul>
 
-<p>Inline elements do not cause transitions to a new line, but will be displayed one next to the other horizontally. Block elements are set like blocks that stack on top of each other and will never display next to one another horizontally, unless we use magic tricks in CSS (which we’ll learn in the next chapter). Inline blocks will act as inline elements (elements are displayed next to each other), but differ in that they can be for instance resized. For example, the <span class="highlight">&lt;textarea&gt;</span> field can be displayed as a large rectangle, but it can take up space beyond a single line of text.
+<p>Inline elements do not cause transitions to a new line, but will be displayed one next to the other horizontally. Block elements are set like blocks that stack on top of each other and will never display next to one another horizontally, unless we use magic tricks in CSS (which we'll learn in the next chapter). Inline blocks will act as inline elements (elements are displayed next to each other), but differ in that they can be for instance resized. For example, the <span class="highlight">&lt;textarea&gt;</span> field can be displayed as a large rectangle, but it can take up space beyond a single line of text.
 
 <p>Let me share with you some examples of items that can be classified according to one of the three groups.</p>
 <ul><li>inline – <span class="highlight">&lt;span&gt;</span>, <span class="highlight">&lt;em&gt;</span>, <span class="highlight">&lt;strong&gt;</span>
@@ -78,11 +77,11 @@
 <p>one</p><p>two</p><p>three</p>
 
 
-<p>For this example, we use <span class="highlight">&lt;div&gt;</span>. You may  wonder what this tag describes within the document. The short answer is nothing. We use the <span class="highlight">&lt;div&gt;</span> tag in cases where all other tags do not find a use for what we’ve put in the document. It is common, therefore, that the <span class="highlight">&lt;div&gt;</span> tag (in conjunction with other classes) is used to achieve different visual effects, as a result of it having no function for describing content. For example, if you want to make three vertical columns on our website, we might need an item that can separate some elements of inline or inline block elements. </p>
+<p>For this example, we use <span class="highlight">&lt;div&gt;</span>. You may  wonder what this tag describes within the document. The short answer is nothing. We use the <span class="highlight">&lt;div&gt;</span> tag in cases where all other tags do not find a use for what we've put in the document. It is common, therefore, that the <span class="highlight">&lt;div&gt;</span> tag (in conjunction with other classes) is used to achieve different visual effects, as a result of it having no function for describing content. For example, if you want to make three vertical columns on our website, we might need an item that can separate some elements of inline or inline block elements. </p>
 
-<p>In general, it’s a good idea to not overuse the <span class="highlight">&lt;div&gt;</span> tag if possible.</p>
+<p>In general, it's a good idea to not overuse the <span class="highlight">&lt;div&gt;</span> tag if possible.</p>
 
-<p>With our new found knowledge of blocks, let’s make up our form code so that the form fields and their descriptions are displayed nicely one on top of the other:</p>
+<p>With our new found knowledge of blocks, let's make up our form code so that the form fields and their descriptions are displayed nicely one on top of the other:</p>
 
 
 <pre><code>&lt;form&gt;
@@ -109,9 +108,9 @@
   &lt;/div&gt;
 &lt;/form&gt;</code></pre>
 
-<p>It looks a bit more complicated, but the only thing we’ve done here is add <span class="highlight">&lt;div&gt;</span> tags to surround each of the elements on the form.</p>
+<p>It looks a bit more complicated, but the only thing we've done here is add <span class="highlight">&lt;div&gt;</span> tags to surround each of the elements on the form.</p>
 
-<p>Once again, let’s look at a code comparison of our new code (left) against the old one (right):</p>
+<p>Once again, let's look at a code comparison of our new code (left) against the old one (right):</p>
 
 <figure class="image"><img src="img/chapter10/code-comparison.png" alt=""></figure>
 <p>And now see how the new code displays in your browser!</p>

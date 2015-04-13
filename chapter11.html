@@ -21,7 +21,7 @@
     <h1>Form Extras</h1>
     <p class="chapter-info">Chapter 11</p>
   </header>
-  <p>I have a few more surprises in store for you. We can now use a number of attributes that will help make our form more attractive. One of them is a <span class="highlight">&lt;placeholder&gt;:</span> text. Let’s add it to one of the form fields, <span class="highlight">&lt;textarea&gt;:</span>.
+  <p>I have a few more surprises in store for you. We can now use a number of attributes that will help make our form more attractive. One of them is a <span class="highlight">&lt;placeholder&gt;:</span> text. Let's add it to one of the form fields, <span class="highlight">&lt;textarea&gt;:</span>.
   
 <pre data-keep-tags="span"><code>&lt;textarea rows="10" cols="50" id="content" name="content" 
 <span class="highlight">placeholder="Enter a comment here. Be nice and polite!"</span>&gt;&lt;/textarea&gt;</code></pre>
@@ -40,7 +40,7 @@
 
 <p>There is plenty of useful attributes you can use together with form elements. Let's consider Google search input for a moment:</p>
 <figure class="image"><img src="img/chapter11/google-form.png" alt=""></figure>
-<p>It’s encoded per the following (as of April 2015):</p>
+<p>It's encoded per the following (as of April 2015):</p>
 <pre data-keep-tags="span"><code>&lt;input id="q" aria-hidden="true" autocomplete="off" name="q" tabindex="-1" type="url" jsaction="mousedown:ntp.fkbxclk" style="opacity: 0;"&gt;</code></pre>
 
 <p>As you can see, the element <span class="highlight">input</span> has a bit more than the usual attributes we used. Try for yourself to find the HTML specifications for each of them. Even Google will help you here :).</p>
@@ -65,7 +65,7 @@ input[type="<span class="highlight">email</span>"] {
 <p>Everything should now look like this:</p>
 <figure class="image"><img src="img/chapter11/input-email.png" alt=""></figure>
 
-<p>As you can see, we’ve created two selectors in CSS which give the same value, specifically for "border." If we wanted to use something like this for a larger number of elements, we would probably copy one of those selectors and modify it slightly. As a result, we would have more independent selectors doing the same thing (i.e. setting borders). In CSS, you can shorten the operation, listing selectors after a comma to form a group.</p>
+<p>As you can see, we've created two selectors in CSS which give the same value, specifically for "border." If we wanted to use something like this for a larger number of elements, we would probably copy one of those selectors and modify it slightly. As a result, we would have more independent selectors doing the same thing (i.e. setting borders). In CSS, you can shorten the operation, listing selectors after a comma to form a group.</p>
 
 <pre data-keep-tags="span"><code class="language-css">input[type="text"],
 input[type="email"] {
@@ -81,7 +81,7 @@ article p,
   margin: 5px;
 }</code></pre>
 
-<p>Always keep in mind grouping selectors allows you to repeat certain values for several elements. This way, you have one piece of code for multiple elements in the HTML, and you won’t have to look too far in the CSS file to make modifications.</p>
+<p>Always keep in mind grouping selectors allows you to repeat certain values for several elements. This way, you have one piece of code for multiple elements in the HTML, and you won't have to look too far in the CSS file to make modifications.</p>
   <footer>
       <p class="chapter-end-info">End Of Chapter 11</p>
   </footer>

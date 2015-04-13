@@ -21,14 +21,14 @@
       <h1>Forms in HTML5</h1>
       <p class="chapter-info">Chapter 9</p>
     </header>  
-    <p>So far, we’ve managed to create a few interesting versions of the website. We haven’t yet covered the forms for which users can enter data. Forms are used across the Internet everywhere; search engines like Google or Bing, Facebook status fields, or Gmail email editors allow you to type or send information. </p>
+    <p>So far, we've managed to create a few interesting versions of the website. We haven't yet covered the forms for which users can enter data. Forms are used across the Internet everywhere; search engines like Google or Bing, Facebook status fields, or Gmail email editors allow you to type or send information. </p>
     <p>Let's make a simple form to allow users comment on our article. We want the form to look something like the following image:</p>
     <figure class="image"><img src="img/chapter9/form-preview.png" alt=""></figure>
     <p>Let's now select the individual components that make up the form. We will use the same selection colors for elements that perform a similar function:</p>
     <figure class="image"><img src="img/chapter9/form-blocks.png" alt=""></figure>
-    <p>As you can see, green indicates names or description for each of the fields. Orange elements show places where you can enter one-liner text. The blue area lets you enter longer chunks of text, and purple is used for a button to send the form. For each group, we’ll use the same tag.</p>
+    <p>As you can see, green indicates names or description for each of the fields. Orange elements show places where you can enter one-liner text. The blue area lets you enter longer chunks of text, and purple is used for a button to send the form. For each group, we'll use the same tag.</p>
 
-    <p>For names we’ll use <span class="highlight">&lt;label&gt;</span>. For shorter fields  – <span class="highlight">&lt;input type="text"&gt;</span>. The longer texts will use <span class="highlight">&lt;textarea&gt;</span>. Buttons are made with <span class="highlight">&lt;input type="submit"&gt;</span>. These are the most popular elements of HTML, that are used to build forms on websites. As always, we start with a blank HTML template page and add then add more elements.</p>
+    <p>For names we'll use <span class="highlight">&lt;label&gt;</span>. For shorter fields  – <span class="highlight">&lt;input type="text"&gt;</span>. The longer texts will use <span class="highlight">&lt;textarea&gt;</span>. Buttons are made with <span class="highlight">&lt;input type="submit"&gt;</span>. These are the most popular elements of HTML, that are used to build forms on websites. As always, we start with a blank HTML template page and add then add more elements.</p>
     <pre data-keep-tags="span"><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
   &lt;head&gt;
@@ -54,33 +54,33 @@
     <span class="highlight">&lt;/form&gt;</span>
   &lt;/body&gt;
 &lt;/html&gt;</code></pre>
-<p>Now, we want to add the first description name: "Your nickname." From here on, we’ll examine the code fragments that are contained under <span class="highlight">&lt;form&gt;</span>, because the rest of the HTML is already well known to you.</p>
+<p>Now, we want to add the first description name: "Your nickname." From here on, we'll examine the code fragments that are contained under <span class="highlight">&lt;form&gt;</span>, because the rest of the HTML is already well known to you.</p>
 <pre data-keep-tags="span"><code>&lt;form&gt;
   <span class="highlight">&lt;label for="nickname"&gt;Your nickname:&lt;/label&gt;</span>
   <span class="highlight">&lt;input type="text" id="nickname" name="nickname"&gt;</span>
 &lt;/form&gt;</code></pre>
 
-<p>Here we have two <span class="highlight">&lt;label&gt;</span> elements which give the description name, and the <span class="highlight">&lt;input&gt;</span> elements for text input. The <span class="highlight">&lt;input&gt;</span> tag has three attributes: input <span class="highlight">type</span> with a "text" value, <span class="highlight">name</span> with "nickname" value and <span class="highlight">id</span> also with "nicknake" value. The "type" attribute means that it’s a short text field.  </p>
+<p>Here we have two <span class="highlight">&lt;label&gt;</span> elements which give the description name, and the <span class="highlight">&lt;input&gt;</span> elements for text input. The <span class="highlight">&lt;input&gt;</span> tag has three attributes: input <span class="highlight">type</span> with a "text" value, <span class="highlight">name</span> with "nickname" value and <span class="highlight">id</span> also with "nicknake" value. The "type" attribute means that it's a short text field.  </p>
 <p>The field below appears for these types of fields:</p>
     <figure class="image"><img src="img/chapter9/form-input.png" alt=""></figure>
-    <p>You’ll use  <span class="highlight">&lt;input type="text"&gt;</span> in your code to indicate that a user can type within the field. Note that text fields can be styled using CSS. We can change it’s border, width, or distance between any text and a text field border. A rough example is shown below:</p>
+    <p>You'll use  <span class="highlight">&lt;input type="text"&gt;</span> in your code to indicate that a user can type within the field. Note that text fields can be styled using CSS. We can change it's border, width, or distance between any text and a text field border. A rough example is shown below:</p>
         <figure class="image"><img src="img/chapter9/form-input-text.png" alt=""></figure>
     <p>The "name" attribute is used to name each of the fields. This is useful when you send the form to the server. It helps to identify which value comes from which field.</p>
     <p> Note also the correlation between the value of the "id" and the value of "for" attribute in <span class="highlight">&lt;label&gt;</span>:</p>
 
-    <pre data-keep-tags="span"><code>&lt;label for="<span class="highlight">nickname</span>"&gt;Twój nick:&lt;/label&gt;
+    <pre data-keep-tags="span"><code>&lt;label for="<span class="highlight">nickname</span>"&gt;Your nickname:&lt;/label&gt;
 &lt;input type="text" id="nickname" id="<span class="highlight">nickname</span>" name="nickname"&gt;</code></pre>
 <p>In the "for" attribute, you should use the id of the field described by the <span class="highlight">&lt;label&gt;</span> element.</p>
 
 
-<p>Let’s make another form, now for the "email" field.</p>
+<p>Let's make another form, now for the "email" field.</p>
 <pre data-keep-tags="span"><code>&lt;form&gt;
   &lt;label for="nickname"&gt;Your nickname:&lt;/label&gt;
   &lt;input type="text" id="nickname" name="nickname"&gt;
   <span class="highlight">&lt;label for="user-email"&gt;Your e-mail:&lt;/label&gt;</span>
   <span class="highlight">&lt;input type="email" id="user-email" name="user-email"&gt;</span>
 &lt;/form&gt;</code></pre>
-<p>The only difference here is that the "type" attribute has an "email" value. The meaning is, of course, so that the user can enter their email. Note that anything typed within the "email" field will have to be validated as a correct e-mail address. If it’s not a valid email, the browser will display an error message and will not send the form.</p>
+<p>The only difference here is that the "type" attribute has an "email" value. The meaning is, of course, so that the user can enter their email. Note that anything typed within the "email" field will have to be validated as a correct e-mail address. If it's not a valid email, the browser will display an error message and will not send the form.</p>
 <p>Another field we need to add is a place for the comment. For longer texts, we use the <span class="highlight">&lt;textarea&gt;</span> tag:</p>
 
 <pre data-keep-tags="span"><code>&lt;form&gt;
