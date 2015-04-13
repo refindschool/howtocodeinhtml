@@ -265,7 +265,7 @@ body {
   background-color: transparent;
   min-height: 1000px;
   padding-top: 40px;
-  padding-bottom: 120px;
+  padding-bottom: 160px;
   position: relative;
   overflow: hidden;
   z-index: 11;
@@ -274,12 +274,12 @@ body {
 .book-details .book-bgr {
   background-image: url(../img/book2.png);
   background-repeat: no-repeat;
-  background-size: 919px;
+  background-size: 880px;
   width: 800px;
-  height: 909px;
+  height: 876px;
   position: absolute;
   right: 0;
-  top: 211px;
+  top: 263px;
   background-position: 6px 0%;
 }
 
