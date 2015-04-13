@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" class="language-markup"><head>
+<head>
+  <title>Chapter 8: Summary Time!</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+  <link href="css/main.min.css" rel="stylesheet">
+  
+  
+<link rel="icon" 
+      type="image/png" 
+      href="favicon.png">
+</head>
+<body>
+  <a href="index.html#toc" class="go-to-toc"><img src="img/toc-icon.png" alt="Table of contents icon"></a>
+  <p class="follow-me"><a href="https://twitter.com/varjs" class="twitter-follow-button" data-show-count="false" data-lang="en" data-size="large">Obserwuj @varjs</a></p>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  <article class="book-chapter" role="main">
+    <header>
+      <h1>Summary Time!</h1>
+      <p class="chapter-info">Chapter 8</p>
+    </header>  
+    <p>Time to rest a moment and reflect on what we’ve learned so far. By now, you’ve met many of the basic concepts required to create web pages.</p>
+    <p>We began by understanding how websites are built, with plain text that describes how individual parts work and compared them to how blocks are stacked one on top of the other.</p>
+    <p>With this analogy, we found that blocks correspond to HTML tags. All HTML tags are predefined and definitions, best uses, and synergies between other elements are standardized by the W3C organization. For example, if we need a paragraph of text, we use the <span class="highlight">&lt;p&gt;</span> block. If we need an article, we use the <span class="highlight">&lt;article&gt;</span> block. If we’re dealing with headers, we use hierarchies of <span class="highlight">&lt;h1&gt;</span>, <span class="highlight">&lt;h2&gt;</span>, <span class="highlight">&lt;h3&gt;</span>, <span class="highlight">&lt;h4&gt;</span>, <span class="highlight">&lt;h5&gt;</span> or <span class="highlight">&lt;h6&gt;</span> depending on the context. We know that the entire list of HTML tags can be found on the HTML specification.</p>
+    <p>We found that tags can be nested within one another. For example, the article for our page that consisted of a title, image, and paragraphs. These elements were denoted by <span class="highlight">&lt;header&gt;</span>, <span class="highlight">&lt;h1&gt;</span>, <span class="highlight">&lt;figure&gt;</span> and <span class="highlight">&lt;p&gt;</span>, which were then nested under the "parent" tag <span class="highlight">&lt;article&gt;</span>. In HTML we try to think hierarchically. We build large blocks with smaller blocks and always put the most important blocks higher in the code than the less important blocks.</p>
+
+    <p>Then we found that websites with only this HTML code are visually unattractive. With CSS, we learned that we can target HTML tags and decorate them with special selectors. We know that if we wanted to get "all the paragraphs in an <span class="highlight">&lt;article&gt;</span>, our CSS selector should be written as with properties and values that we want within the brackets.</p>
+<pre data-keep-tags="span"><code class="language-css">article p {}</code></pre>
+
+<p>In addition, we learned that classes are a helpful component of CSS. Thanks to classes, we can modify HTML tags to be more robust so that we don’t always have to go to the CSS file and make changes when the HTML changes. Each tag in HTML can be given a class attribute, and these class names can be whatever you choose, but they should describe the function that it plays in the document. For example, in a press release, we can write this in HTML:</p>
+
+<pre data-keep-tags="span"><code class="language-markup">&lt;article class="news"&gt;...&lt;/article&gt;</code></pre>
+<p>The CSS code then should reflect those classes:</p>
+<pre data-keep-tags="span"><code class="language-css">.news {}</code></pre>
+
+<p>In this way, we have learned the most important fundamentals of HTML and CSS. When building web pages, we always divide content into smaller parts and determine the function of elements. We try to be as specific as possible for even the smallest element, being able to code and describe things like menus, articles, titles, dates, paragraphs, quotes and pictures.</p>
+<p>Always remember that HTML is a data layer while CSS is a presentation layer. It means, that HTML stores data information described by the use of proper tags, when CSS code has to visualize this data adding colors, fonts, borders and so on.</p>
+<p>At this point you have probably asked yourself how one can publish a website on the web so your friends can see it. Being more precise, how does it happen that after typing <a href="http://functionite.com">functionite.com</a> in a browser address bar, you actually see a website? It's simple. First off, you need to buy a domain which will indicate your own website on the web. In above example, I had to register functionite.com. There are a lot of companies that make this process easy. All you need to know is a unique domain name that will be pointing to your website. After you have a unique id where your website is going to be available at, you need a web server to where you will upload your complete website. All images, CSS, HTML and other files must be first uploaded to that server, which is actually a special computer connected with the internet, that allows your website be accessible from any place in the world. Again, the web servers business is a huge market and you will certainly find a decent company that you can buy a server space from. There are also companies that offer easy deals so you can purchase a domain and a web server access at once.</p>
+    <footer>
+        <p class="chapter-end-info">End Of Chapter 8</p>
+    </footer>
+  </article>
+  <script src="js/prism.js"></script>
+  <script src="js/prism-keep-tags.js"></script>
+  <nav class="book-nav" role="navigation">
+    <ul class="book-chapter-menu">
+        <li class="book-chapter-menu__item next-chapter"><span class="chapter-number">Chapter 9</span><a href="chapter9.html">Forms in HTML5</a></li>
+        <li class="book-chapter-menu__item prev-chapter"><span class="chapter-number">Chapter 7</span><a href="chapter7.html">Understanding Selectors in CSS</a></li>
+    </ul>
+  </nav>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-600043-25', 'auto');
+  ga('send', 'pageview');
+
+</script></body>
