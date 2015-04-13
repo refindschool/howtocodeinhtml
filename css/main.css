@@ -64,6 +64,10 @@ body {
   width: 100%;
 }
 
+.book-chapter p {
+  margin: 0;
+}
+
 .book-chapter p,
 .book-chapter ul li,
 .book-chapter ol li {
