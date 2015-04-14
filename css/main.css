@@ -697,7 +697,7 @@ body {
   }
 
   .page-header {
-    min-height: 520px;
+    min-height: 500px;
     padding-top: 40px;
     background-size: 50%;
     background-position: center bottom !important;
