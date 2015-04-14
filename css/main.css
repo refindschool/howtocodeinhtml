@@ -300,6 +300,8 @@ body {
 
 .toc-details {
   padding-right: 32%;
+  position: relative;
+  z-index: 9999;
 }
 
 
