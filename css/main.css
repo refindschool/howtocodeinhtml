@@ -697,10 +697,14 @@ body {
   }
 
   .page-header {
-    min-height: 500px;
+    min-height: 520px;
     padding-top: 40px;
     background-size: 50%;
     background-position: center bottom !important;
+  }
+
+  .more-books {
+    font-size: 14px;
   }
 
   .toc {
