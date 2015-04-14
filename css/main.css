@@ -276,9 +276,9 @@ body {
 .book-details .book-bgr {
   background-image: url(../img/book2.png);
   background-repeat: no-repeat;
-  background-size: 880px;
+  background-size: 920px;
   width: 800px;
-  height: 876px;
+  height: 910px;
   position: absolute;
   right: 0;
   top: 263px;
