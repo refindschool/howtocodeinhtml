@@ -512,6 +512,29 @@ body {
   padding-left: 10px;
 }
 
+.more-books {
+  color: black;
+  text-decoration: none;
+  display: block;
+  margin-top: 10px;
+}
+
+.page-header #mc_embed_signup input.email::-webkit-input-placeholder {
+   color: black;
+}
+
+.page-header #mc_embed_signup input.email:-moz-placeholder { /* Firefox 18- */
+   color: black;  
+}
+
+.page-header #mc_embed_signup input.email::-moz-placeholder {  /* Firefox 19+ */
+   color: black;  
+}
+
+.page-header #mc_embed_signup input.email:-ms-input-placeholder {  
+   color: black;  
+}
+
 #mc_embed_signup input.email::-webkit-input-placeholder {
    color: white;
 }

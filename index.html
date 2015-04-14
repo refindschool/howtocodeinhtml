@@ -44,7 +44,7 @@
     <div class="group">
       <h1>How to Code <br>in HTML5 and CSS3</h1>
       <p class="author-name"><a href="#author">E-Book By Damian Wielgosik</a></p>
-      <a href="#toc" class="get-book">HTML</a><a href="HowToCodeInHTML5AndCSS3.epub" class="get-book">epub</a><a href="HowToCodeInHTML5AndCSS3.mobi" class="get-book">kindle</a><a href="HowToCodeInHTML5AndCSS3.pdf" class="get-book">pdf</a>
+      <a href="#toc" class="get-book">HTML</a><a href="HowToCodeInHTML5AndCSS3.epub" class="get-book">epub</a><a href="HowToCodeInHTML5AndCSS3.mobi" class="get-book">kindle</a><a href="HowToCodeInHTML5AndCSS3.pdf" class="get-book">pdf</a><a href="#more-books" class="more-books">(click here if you're looking for more <strong>free</strong> books)</a>
     </div>
   </header>
   <section class="testimonial">
@@ -86,7 +86,7 @@
       <div class="fb-like" data-href="http://howtocodeinhtml.com" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
     </div>
   </section>
-  <section class="pdf">
+  <section class="pdf" id="more-books">
     <div class="group">
       <h1>Get more free books!</h1>
       <p class="promo-text">This book is just a beginning of your professional career. By subscribing to my newsletter you will be receving free tips and other related books directly to your inbox. This will help you stay up to date with modern technologies and make profits out of it!</p>
@@ -127,6 +127,17 @@
   $(".get-book").eq(0).on("click", function(ev) {
     ev.preventDefault();
     var offset = $("#toc").offset();
+    var hash = $(this).attr("href");
+    $("body,html").animate({
+      scrollTop: offset.top
+    }, 500, function() {
+      location.href = hash;
+    });
+  });
+
+  $(".more-books").eq(0).on("click", function(ev) {
+    ev.preventDefault();
+    var offset = $("#more-books").offset();
     var hash = $(this).attr("href");
     $("body,html").animate({
       scrollTop: offset.top
