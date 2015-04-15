@@ -231,7 +231,7 @@ body {
   margin: 0;
   color: #000;
   font-size: 32px;
-  display: inline-block;
+  display: block;
   font-family: "Open Sans Light", serif;
 }
 
