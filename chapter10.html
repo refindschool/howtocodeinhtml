@@ -59,12 +59,12 @@
 <li>block-level – <span class="highlight">&lt;div&gt;</span>, <span class="highlight">&lt;p&gt;</span>, <span class="highlight">&lt;article&gt;</span></li>
 <li>inline block-level – <span class="highlight">&lt;input&gt;</span>, <span class="highlight">&lt;textarea&gt;</span></li></ul>
 
-<p>By default, inline elements have CSS <span class="highlight">display</span> property set to <span class="highlight">inline</span>. For block-level elements, its value is "block", and for inline block elements it's "inline-block". So you can explain that <span class="highlight">&lt;span&gt;</span> tag doesn't cause breaking the text to the new line, because it's an inline element which means in CSS it has property "display" set to "inline". So, considering the below code:
+<p>By default, inline elements have CSS <span class="highlight">display</span> property set to <span class="highlight">inline</span>. For block-level elements, its value is "block", and for inline block elements it's "inline-block". So you can explain that <span class="highlight">&lt;span&gt;</span> tag doesn't cause breaking the text to the new line, because it's an inline element which means in CSS it has a property "display" set to "inline". So, considering the below code:
 
 <pre data-keep-tags="span"><code>&lt;span&gt;one&lt;/span&gt; &lt;span&gt;two&lt;/span&gt; &lt;span&gt;three&lt;/span&gt;</code></pre>
 
 <p>The browser will display above code in one line:</p>
-<p><span>one</span> <span>two</span> <span>trhee</span></p>
+<p><span>one</span> <span>two</span> <span>three</span></p>
 
 <p>However, it's possible to change this behavior by adding one line of CSS:</p>
 
