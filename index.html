@@ -48,10 +48,18 @@
     <div class="group">
       <h1>How to Code <br>in HTML5 and CSS3</h1>
       <p class="slogan">A book that helps people start making websites</p>
-      <p class="get-html-book"><a href="#toc" class="get-book">read online</a></p><div class="or">or have a comfortable read with a</div>
+      <div class="get-book-by-email"><p class="get-html-book"><a href="#toc" class="get-book">read online</a></p><div class="or">or have a comfortable read with a</div>
       <p>
         <a href="http://functionite.us4.list-manage.com/subscribe?u=7217ca3bd728e0e5cb12e6413&amp;id=50cd0c2af6" class="get-book">free Kindle/PDF version</a>
       </p>
+      </div>
+      <div class="get-book-by-tweet" style="display: none;">
+        <p class="get-html-book"><a href="#toc" class="get-book">read online</a></p>
+        <div class="or">or tweet about the book to get it for free</div>
+        <p>
+          <a href="http://www.paywithatweet.com/pay?id=f785ce2a-93e6-4641-b361-4fec91d64248" class="get-book">tweet and get it</a>
+        </p>
+      </div>
     </div>
   </header>
   <section class="testimonial">
@@ -153,6 +161,12 @@
       location.href = hash;
     });
   });
+
+  var score = Math.random();
+  if (score > 0.5) {
+    $(".get-book-by-email").css("display", "none");
+    $(".get-book-by-tweet").css("display", "block");
+  }
 
 </script>
 
