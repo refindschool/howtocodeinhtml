@@ -377,6 +377,10 @@ body {
   display: none;
 }
 
+.testimonial a {
+  color: #fff;
+}
+
 .slider {
   max-width: 600px;
   margin: auto;
