@@ -43,7 +43,7 @@
     <p>It looks a bit better. Each section of the text is now formatted differently, and the picture is also displayed. This is not the final version though. The lack of color, bold text and style doesn't quite match up yet. But before we work on that, let's keep our focus on the structure of the page.</p>
     <p>First, let's compare the plain text document version of the posting, and the one presented in HTML:</p>
     <figure class="image"><img src="img/chapter2/job-post-code-comparison.png" alt=""></figure>
-    <p>As a result of surrounding specific text fragments with special tags, we've created a completely different, which the browser understands. Way to go!</p>
+    <p>As a result of surrounding specific text fragments with special tags, we've created a completely different document, which can be understood by the browsers. Way to go!</p>
     <p>This is called HTML, or Hypertext Markup Language, and is the primary markup language for displaying information for a web browser. In simpler terms, it's a language that uses "tags" (like &lt;this&gt;) to mark text, so that you can describe the text to your browser. This also includes search engines and a few other programs which we'll cover later on. HTML tags are like grammar forms in verbal communication, without them, you cannot build a coherent website, much like you cannot form correct sentences or paragraphs without grammar.</p>
     <p>In our case, we used only a few simple tags, and below is a list of the functions that each tag performs:</p>
     <ul>
@@ -61,7 +61,7 @@
     <pre data-keep-tags="span"><code>&lt;img src="images/white-cat.jpg"&gt;</code></pre>
     <p>There are several more tags that do not need to to be "closed", which you will learn about later in this book.</p>
     <p>One important realization to make about HTML tags is that, like dictionaries contain the vocabulary of a language, so too does HTML have a kind of dictionary that defines tags and describes when and where to use them. At the moment we have covered only a few, but there are many more. The international organization known as The World Wide Web Consortium (W3C) encourages best practices, standards, and compatibility across the web. You can view their definition of HTML elements here: <a href="http://www.w3.org/TR/html-markup/elements.html">http://www.w3.org/TR/html-markup/elements.html</a>.</p>
-    <p>Also, its helpful to remember that, like natural languages, HTML evolves over time. Today, we use the fifth version of the HTML language, known as HTML5. </p>
+    <p>Also, it's helpful to remember that, like natural languages, HTML evolves over time. Today, we use the fifth version of the HTML language, known as HTML5. </p>
     <p>Returning to our example, it should look like the following in HTML code:</p>
     <pre data-keep-tags="span"><code>&lt;h1&gt;We're looking for an HTML and CSS developer&lt;/h1&gt;
 
@@ -75,7 +75,7 @@
     <pre data-keep-tags="span"><code>&lt;p&gt;For our client, The Cat Factory, we need a skilled web developer in HTML and CSS. We offer a competitive salary, a bag of cat food, and toys.&lt;/p&gt;
 
 &lt;p&gt;Don't wait, apply now! Our crazy team is waiting for you right meow!&lt;/p&gt;</code></pre>
-    <p>Suppose that we want the reader of our ad to pay particular attention to a certain part in a paragraph. Let's say that we wanted to mark the part of the text that says "we need a skilled web developer in HTML and CSS." How would an HTML tag let the browser know? The answer is the <span class="highlight">&lt;strong&gt;</span> element, which will surround parts of text that should be represent strong importance for its contents.</p>
+    <p>Suppose that we want the reader of our ad to pay particular attention to a certain part in a paragraph. Let's say that we wanted to mark the part of the text that says "we need a skilled web developer in HTML and CSS." How would an HTML tag let the browser know? The answer is the <span class="highlight">&lt;strong&gt;</span> element, which will surround parts of text that should represent a strong importance for its contents.</p>
 
   <pre data-keep-tags="span"><code>&lt;p&gt;For our client, The Cat Factory, <span class="highlight">&lt;strong&gt;we need a skilled web developer 
 in HTML and CSS&lt;/strong&gt;</span>. We offer a competitive salary, a bag of cat food,
@@ -87,7 +87,7 @@ and toys.&lt;/p&gt;
 
     <p>Here is what it looks like on the web.</p>
     <figure class="image"><img src="img/chapter2/job-post-strong-browser.png" alt=""></figure>
-    <p>Take note that this web browser displayed the fragment in bold, but this is not always a rule. It's very common that &lt;strong&gt; makes text bold, but sometimes it will be ignored. The reason for using this HTML tag in this text is a good example of how nesting works, but visual effects (like bold) can be better achieved through a language called CSS, which we will learn more about in a moment.</p>
+    <p>Take note that a web browser we used above displayed the fragment in bold, but this is not always a rule. It's very common that &lt;strong&gt; makes text bold, but sometimes it will be ignored. The reason for using this HTML tag in this text is a good example of how nesting works, but visual effects (like bold) can be better achieved through a language called CSS, which we will learn more about in a moment.</p>
     <footer>
         <p class="chapter-end-info">End Of Chapter 2</p>
     </footer>
