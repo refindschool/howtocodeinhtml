@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" class="language-markup">
+<head>
+  <title>Chapter 11: Form Extras</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+  <link href="css/main.min.css" rel="stylesheet">
+  
+  
+<link rel="icon" 
+      type="image/png" 
+      href="favicon.png">
+</head>
+<body>
+  <a href="index.html#toc" class="go-to-toc"><img src="img/toc-icon.png" alt="Table of contents icon"></a>
+  <p class="follow-me"><a href="https://twitter.com/varjs" class="twitter-follow-button" data-show-count="false" data-lang="en" data-size="large">follow me @varjs</a></p>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  <article class="book-chapter" role="main">
+  <header>
+    <h1>Form Extras</h1>
+    <p class="chapter-info">Chapter 11</p>
+  </header>
+  <p>I have a few more surprises in store for you. We can now use a number of attributes that will help make our form more attractive. One of them is a <span class="highlight">placeholder</span> text. Let's add it to one of the form fields, <span class="highlight">&lt;textarea&gt;</span>:
+  
+<pre data-keep-tags="span"><code>&lt;textarea rows="10" cols="50" id="content" name="content" 
+<span class="highlight">placeholder="Enter a comment here. Be nice and polite!"</span>&gt;&lt;/textarea&gt;</code></pre>
+<p>The effect?</p>
+<figure class="image"><img src="img/chapter11/form-placeholder.png" alt=""></figure>
+
+<p>As you can see, in the middle of <span class="highlight">&lt;textarea&gt;</span>, text has appeared with an additional description of this field, which corresponds to what we put in the attribute "placeholder". Peace of mind, when you click this text will disappear and you will be able to enter your own content. If you leave the field blank is also nothing will happen - the contents of the "placeholder" will not be sent away, it serves only to hint to the user. This attribute can also use elements <span class="highlight">&lt;input&gt;</span>.</p>
+
+<p>Another very useful attribute is <span class="highlight">required</span>, which is added to the form elements without any value. For example, an e-mail will look like this:</p>
+
+
+<pre data-keep-tags="span"><code>&lt;input type="email" id="user-email" name="user-email" <span class="highlight">required</span>&gt;</code></pre>
+
+<p>Now, when we leave the field blank, when you send the form we will see the error:</p>
+<figure class="image"><img src="img/chapter11/input-required.png" alt=""></figure>
+
+<p>There is plenty of useful attributes you can use together with form elements. Let's consider Google search input for a moment:</p>
+<figure class="image"><img src="img/chapter11/google-form.png" alt=""></figure>
+<p>It's encoded per the following (as of April 2015):</p>
+<pre data-keep-tags="span"><code>&lt;input id="q" aria-hidden="true" autocomplete="off" name="q" tabindex="-1" type="url" jsaction="mousedown:ntp.fkbxclk" style="opacity: 0;"&gt;</code></pre>
+
+<p>As you can see, the element <span class="highlight">input</span> has a bit more than the usual attributes we used. Try for yourself to find the HTML specifications for each of them. Even Google will help you here :).</p>
+
+<p>Attributes are also useful for transmitting elements from CSS. For example, each element <span class="highlight">input</span> with the attribute "type" equal to "text", as shown below:</p>
+
+<pre data-keep-tags="span"><code class="language-css">input[type="text"] {
+  border: 1px solid blue;
+}</code></pre>
+
+<p>In the example above, each element <span class="highlight">input</span> has the attribute "type" equal to "text" with the value of a blue frame:</p>
+
+<figure class="image"><img src="img/chapter11/input-blue.png" alt=""></figure>
+<p>Similarly, we can use the same for the email field:</p>
+<pre data-keep-tags="span"><code class="language-css">input[type="text"] {
+  border: 1px solid blue;
+}
+
+input[type="<span class="highlight">email</span>"] {
+  border: 1px solid blue;
+}</code></pre>
+<p>Everything should now look like this:</p>
+<figure class="image"><img src="img/chapter11/input-email.png" alt=""></figure>
+
+<p>As you can see, we've created two selectors in CSS which give the same value, specifically for "border." If we wanted to use something like this for a larger number of elements, we would probably copy one of those selectors and modify it slightly. As a result, we would have more independent selectors doing the same thing (i.e. setting borders). In CSS, you can shorten the operation, listing selectors after a comma to form a group.</p>
+
+<pre data-keep-tags="span"><code class="language-css">input[type="text"],
+input[type="email"] {
+  border: 1px solid blue;
+}</code></pre>
+
+<p>You can see that we saved space and simplified our code to have better clarity. Using our previous example, all combinations are possible selectors that we want to group:</p>
+
+<pre data-keep-tags="span"><code class="language-css">.news-item,
+article p,
+#main header h1 {
+  padding: 5px;
+  margin: 5px;
+}</code></pre>
+
+<p>Always keep in mind grouping selectors allows you to repeat certain values for several elements. This way, you have one piece of code for multiple elements in the HTML, and you won't have to look too far in the CSS file to make modifications.</p>
+  <footer>
+      <p class="chapter-end-info">End Of Chapter 11</p>
+  </footer>
+</article>
+<script src="js/prism.js"></script>
+<script src="js/prism-keep-tags.js"></script>
+  <nav class="book-nav" role="navigation">
+    <ul class="book-chapter-menu">
+        <li class="book-chapter-menu__item next-chapter"><span class="chapter-number">Chapter 12</span><a href="chapter12.html">Multi-Column Layout</a></li>
+        <li class="book-chapter-menu__item prev-chapter"><span class="chapter-number">Chapter 10</span><a href="chapter10.html">Differences Between &lt;div&gt; and &lt;span&gt;</a></li>
+    </ul>
+  </nav>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-600043-25', 'auto');
+  ga('send', 'pageview');
+
+</script></body></html>

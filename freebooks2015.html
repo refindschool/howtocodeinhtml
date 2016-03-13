@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Learn How to Code in HTML5 and CSS3</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="http://howtocodeinhtml.com/cover.png">
+  <meta property="og:title" content="Learn How to Code in HTML5 and CSS3">
+  <meta property="og:description" content="An open e-book about HTML5 and CSS3 for absolute beginners">
+  <link href="css/main.min.css?1234568" rel="stylesheet">
+
+  <link rel="icon" 
+      type="image/png" 
+      href="favicon.png">
+
+      <style type="text/css">
+
+        @media screen and (max-width: 480px) {
+          #mc_embed_signup input.email {
+            width: 185px;
+          }
+
+          .page-header #mc_embed_signup input.email {
+            width: 170px;
+          }
+          .page-header .get-book {
+            padding: 10px 20px 10px 20px;
+          }
+        }
+
+        .page-header .get-book {
+          margin-right: 5px;
+          margin-bottom: 5px;
+        }
+      </style>
+</head>
+<body>
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=106892349421445";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+  <header class="page-header">
+    <div class="group">
+      <h1>How to Code <br>in HTML5 and CSS3</h1>
+      <p class="slogan">Download a book that helps people start making websites</p>
+      <p class="get-html-book"><a href="/HowToCodeInHTML5AndCSS3.pdf" class="get-book">PDF</a><a href="/HowToCodeInHTML5AndCSS3.epub" class="get-book">kindle</a><a href="/HowToCodeInHTML5AndCSS3.mobi" class="get-book">mobi</a></p>
+    </div>
+  </header>
+  <section class="testimonial">
+    <h1>Opinions</h1>
+    <div class="group">
+      <div class="slider">
+        <blockquote><q>This is a great book. It manages to introduce concepts in a logical, understandable way. And it’s free.</q><cite><a href="https://adactio.com/journal/8741">Jeremy Keith</a>, author of "HTML5 for web designers"</cite></blockquote>
+        <blockquote><q>Had I still worked at Roche, Damian's book would have been a simple recruitment test: only those who read it front to back get the job.</q><cite><a href="http://twitter.com/czerskip">Paul Czerski, UX expert</a></cite></blockquote>
+        <blockquote><q>Damian's book is amazing and it's definitely a title that will help a lot of people. I wish I could learn HTML and CSS all over again just so I could use it. At least I can recommend it to all my friends!</q><cite><a href="http://piotrek.co">Peter Mierzejewski, front-end developer</a></cite></blockquote>
+        <blockquote><q>I cried when I wrote it.</q><cite><a href="http://ferrante.pl">Damian Wielgosik</a>, author</cite></blockquote>
+      </div>
+    </div>
+  </section>
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.slick.min.js"></script>
+  <script>$('.slider').slick({
+    dots: true,
+    infinite: true,
+    speed: 500,
+    autoplaySpeed: 5000,
+    slide: "blockquote",
+    centerMode: false,
+    arrows: false,
+    autoplay: true
+  });
+
+  $(".get-book").eq(0).on("click", function(ev) {
+    ev.preventDefault();
+    var offset = $("#toc").offset();
+    var hash = $(this).attr("href");
+    $("body,html").animate({
+      scrollTop: offset.top
+    }, 500, function() {
+      location.href = hash;
+    });
+  });
+
+  $(".more-books").eq(0).on("click", function(ev) {
+    ev.preventDefault();
+    var offset = $("#more-books").offset();
+    var hash = $(this).attr("href");
+    $("body,html").animate({
+      scrollTop: offset.top
+    }, 500, function() {
+      location.href = hash;
+    });
+  });
+
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-600043-25', 'auto');
+  ga('send', 'pageview');
+
+</script></body>
+</html>

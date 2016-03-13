@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" class="language-markup"><head>
+<head>
+  <title>Chapter 9: Forms in HTML5</title>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+  <link href="css/main.min.css" rel="stylesheet">
+  
+  
+<link rel="icon" 
+      type="image/png" 
+      href="favicon.png">
+</head>
+<body>
+  <a href="index.html#toc" class="go-to-toc"><img src="img/toc-icon.png" alt="Table of contents icon"></a>
+  <p class="follow-me"><a href="https://twitter.com/varjs" class="twitter-follow-button" data-show-count="false" data-lang="en" data-size="large">follow me @varjs</a></p>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  <article class="book-chapter" role="main">
+    <header>
+      <h1>Forms in HTML5</h1>
+      <p class="chapter-info">Chapter 9</p>
+    </header>  
+    <p>So far, we've managed to create a few interesting versions of the website. We haven't yet covered the forms for which users can enter data. Forms are used across the Internet everywhere; search engines like Google or Bing, Facebook status fields, or Gmail email editors allow you to type or send information. </p>
+    <p>Let's make a simple form to allow users comment on our article. We want the form to look something like the following image:</p>
+    <figure class="image"><img src="img/chapter9/form-preview.png" alt=""></figure>
+    <p>Let's now select the individual components that make up the form. We will use the same selection colors for elements that perform a similar function:</p>
+    <figure class="image"><img src="img/chapter9/form-blocks.png" alt=""></figure>
+    <p>As you can see, blue indicates names or description for each of the fields. Green elements show places where you can enter one-liner text. The orange area lets you enter longer chunks of text, and purple is used for a button to send the form. For each group, we'll use the same tag.</p>
+
+    <p>For names we'll use <span class="highlight">&lt;label&gt;</span>. For shorter fields  – <span class="highlight">&lt;input type="text"&gt;</span>. The longer texts will use <span class="highlight">&lt;textarea&gt;</span>. Buttons are made with <span class="highlight">&lt;input type="submit"&gt;</span>. These are the most popular elements of HTML, that are used to build forms on websites. As always, we start with a blank HTML template page and add then add more elements.</p>
+    <pre data-keep-tags="span"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+      &lt;meta charset="utf-8"&gt;
+      &lt;title&gt;Form&lt;/title&gt;
+      &lt;link rel="stylesheet" href="main.css"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+<p>We need to use the appropriate tag that tells the browser, "Hey, the form starts here!" This is very similar to the tag &lt;article&gt; for indicating where an article element starts). In HTML, we use the <span class="highlight">&lt;form&gt;</span> tag for indicating a form element</p>
+
+<pre data-keep-tags="span"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+      &lt;meta charset="utf-8"&gt;
+      &lt;title&gt;Form&lt;/title&gt;
+      &lt;link rel="stylesheet" href="main.css"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    <span class="highlight">&lt;form&gt;</span>
+    <span class="highlight">&lt;/form&gt;</span>
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>Now, we want to add the first description name: "Your nickname." From here on, we'll examine the code fragments that are contained under <span class="highlight">&lt;form&gt;</span>, because the rest of the HTML is already well known to you.</p>
+<pre data-keep-tags="span"><code>&lt;form&gt;
+  <span class="highlight">&lt;label for="nickname"&gt;Your nickname:&lt;/label&gt;</span>
+  <span class="highlight">&lt;input type="text" id="nickname" name="nickname"&gt;</span>
+&lt;/form&gt;</code></pre>
+
+<p>Here we have two <span class="highlight">&lt;label&gt;</span> elements which give the description name, and the <span class="highlight">&lt;input&gt;</span> elements for text input. The <span class="highlight">&lt;input&gt;</span> tag has three attributes: input <span class="highlight">type</span> with a "text" value, <span class="highlight">name</span> with "nickname" value and <span class="highlight">id</span> also with "nickname" value. The "type" attribute's value means that it's a short text field.  </p>
+<p>The field below appears for these types of fields:</p>
+    <figure class="image"><img src="img/chapter9/form-input.png" alt=""></figure>
+    <p>You'll use  <span class="highlight">&lt;input type="text"&gt;</span> in your code to indicate that a user can type within the field. Note that text fields can be styled using CSS. We can change its border, width, or distance between any text and a text field border. A rough example is shown below:</p>
+        <figure class="image"><img src="img/chapter9/form-input-text.png" alt=""></figure>
+    <p>The "name" attribute is used to name each of the fields. This is useful when you send the form to the server. It helps to identify which value comes from which field.</p>
+    <p> Note also the correlation between the value of the "id" and the value of "for" attribute in <span class="highlight">&lt;label&gt;</span>:</p>
+
+    <pre data-keep-tags="span"><code>&lt;label for="<span class="highlight">nickname</span>"&gt;Your nickname:&lt;/label&gt;
+&lt;input type="text" id="<span class="highlight">nickname</span>" name="nickname"&gt;</code></pre>
+<p>In the "for" attribute, you should use the id of the field described by the <span class="highlight">&lt;label&gt;</span> element.</p>
+
+
+<p>Let's make another form, now for the "email" field.</p>
+<pre data-keep-tags="span"><code>&lt;form&gt;
+  &lt;label for="nickname"&gt;Your nickname:&lt;/label&gt;
+  &lt;input type="text" id="nickname" name="nickname"&gt;
+  <span class="highlight">&lt;label for="user-email"&gt;Your e-mail:&lt;/label&gt;</span>
+  <span class="highlight">&lt;input type="email" id="user-email" name="user-email"&gt;</span>
+&lt;/form&gt;</code></pre>
+<p>The only difference here is that the "type" attribute has an "email" value. The meaning is, of course, so that the user can enter their email. Note that anything typed within the "email" field will have to be validated as a correct e-mail address. If it's not a valid email, the browser will display an error message and will not send the form.</p>
+<p>Another field we need to add is a place for the comment. For longer texts, we use the <span class="highlight">&lt;textarea&gt;</span> tag:</p>
+
+<pre data-keep-tags="span"><code>&lt;form&gt;
+  &lt;label for="nickname"&gt;Your nickname:&lt;/label&gt;
+  &lt;input type="text" id="nickname" name="nickname"&gt;
+  &lt;label for="user-email"&gt;Your e-mail:&lt;/label&gt;
+  &lt;input type="email" id="user-email" name="user-email"&gt;
+  <span class="highlight">&lt;label for="content"&gt;Content:&lt;/label&gt;
+  &lt;textarea rows="10" cols="50" id="content"  name="content" &gt;&lt;/textarea&gt;</span>
+&lt;/form&gt;</code></pre>
+<p>Note that we used two new attributes: <span class="highlight">rows</span> and <span class="highlight">cols</span>. The "rows" attribute is used for the number of text lines that can be entered into the field until a scrollbar appears. "cols" is used for the number of character in each line. Try changing the values for yourself and see how the entire field expands or contracts accordingly.</p>
+
+<p>The last thing we need to add is a button for sending the form.</p>
+<pre data-keep-tags="span"><code>&lt;form&gt;
+  &lt;label for="nickname"&gt;Your nickname:&lt;/label&gt;
+  &lt;input type="text" id="nickname" name="nickname"&gt;
+  &lt;label for="user-email"&gt;Your e-mail:&lt;/label&gt;
+  &lt;input type="email" id="user-email" name="user-email"&gt;
+  &lt;label for="content"&gt;Content:&lt;/label&gt;
+  &lt;textarea rows="10" cols="50" id="content"  name="content" &gt;&lt;/textarea&gt;
+  <span class="highlight">&lt;input type="submit" value="Add"&gt;</span>
+&lt;/form&gt;</code></pre>
+<p>The element <span class="highlight">&lt;input&gt;</span> has the attribute <span class="highlight">type</span> equal to <span class="highlight">submit</span>. Whatever is typed into the <span class="highlight">value</span> attribute will display as text on our website button. </p>
+
+<p>Our code for the form now looks like this:</p>
+<pre data-keep-tags="span"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+      &lt;meta charset="utf-8"&gt;
+      &lt;title&gt;Formularz&lt;/title&gt;
+      &lt;link rel="stylesheet" href="main.css"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;form&gt;
+      &lt;label for="nickname"&gt;Your nickname:&lt;/label&gt;
+      &lt;input type="text" id="nickname" name="nickname"&gt;
+      &lt;label for="user-email"&gt;Your e-mail:&lt;/label&gt;
+      &lt;input type="email" id="user-email" name="user-email"&gt;
+      &lt;label for="content"&gt;Content:&lt;/label&gt;
+      &lt;textarea rows="10" cols="50" id="content"  name="content" &gt;&lt;/textarea&gt;
+      &lt;input type="submit" value="Add"&gt;
+    &lt;/form&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>Our browser displays it as:</p>
+    <figure class="image"><img src="img/chapter9/form-no-columns.png" alt=""></figure>
+<p>It doesn't look nice. In the next chapter we will figure out how to fix it.</p>
+    <footer>
+        <p class="chapter-end-info">End Of Chapter 9</p>
+    </footer>
+  </article>
+  <script src="js/prism.js"></script>
+  <script src="js/prism-keep-tags.js"></script>
+  <nav class="book-nav" role="navigation">
+    <ul class="book-chapter-menu">
+        <li class="book-chapter-menu__item next-chapter"><span class="chapter-number">Chapter 10</span><a href="chapter10.html">Differences Between &lt;div&gt; and &lt;span&gt;</a></li>
+        <li class="book-chapter-menu__item prev-chapter"><span class="chapter-number">Chapter 8</span><a href="chapter8.html">Summary Time!</a></li>
+    </ul>
+  </nav>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-600043-25', 'auto');
+  ga('send', 'pageview');
+
+</script></body>
+</html>

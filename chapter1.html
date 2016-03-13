@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" class="language-markup">
+<head>
+  <title>Chapter 1: Websites and Legos</title>
+  <meta charset="utf-8">
+  <link href="css/main.min.css" rel="stylesheet">
+  
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<link rel="icon" 
+      type="image/png" 
+      href="favicon.png">
+</head>
+<body>
+  <a href="index.html#toc" class="go-to-toc"><img src="img/toc-icon.png" alt="Table of contents icon"></a>
+  <p class="follow-me"><a href="https://twitter.com/varjs" class="twitter-follow-button" data-show-count="false" data-lang="en" data-show-screen-name="false" data-size="large">follow me @varjs</a></p>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  <article class="book-chapter" role="main">
+    <header>
+        <h1>Websites and Legos</h1>
+        <p class="chapter-info">Chapter 1</p>
+    </header>
+    <p>I really like <a href="http://www.theverge.com/">The Verge</a>. It's a website where you can find interesting articles about new technologies, science and culture. On the home page, you can find dozens of feature stories and articles which tend to look similar to each other. They have a title, category, date, and image entry. It almost looks like it was built with bricks.</p>
+
+    <p>  Let take a look at one of them:</p>
+    <figure class="image"><img src="img/chapter1/theverge-article.png" alt="Artykuł na The Verge"></figure>
+    <p>At first glance, there's nothing complicated. Let's have some fun and highlight (or block out) each element, as though we were dealing with Lego parts.</p>
+    <figure class="image"><img src="img/chapter1/article-theverge-bricks.png" alt=""></figure>
+
+    <p>In total, we've got five pieces, arranged one on top of the other.</p>
+    <p>You might remember from your childhood that in order to build something specific, you need a lot of different blocks that are useful for different things. Each of them has a certain function. For example, when building a house, one type is useful for walls, and the other more useful for floors. There is no single, universal block or element from which you can make anything that comes to mind. See the figure below? This is what a large selection of lego choices should look like, right?</p>
+    <figure class="image"><img src="img/chapter1/lego-bricks.jpg" alt="Lego Bricks"></figure>
+    <p>The same is true with websites. When you build a website, you use the different elements according to their ideal destination. In the Verge example, it seems that we are dealing with various objects (or blocks), so doing something like applying the same color or style to each block would be counterintuitive. After all, the title is not the same as the date, or content of the paragraph. They each perform completely different functions.</p>
+    <p>In order to continue then, we need to identify elements of the article by the functions they perform on the site. Let's do this by adding a unique color to each "block."</p>
+    <figure class="image"><img src="img/chapter1/article-theverge-functional-bricks.png" alt=""></figure>
+    <p>This is much more interesting. We now have a few different types of "building blocks". Only two blocks are of the same type, specifically the two paragraphs below the picture. This is no different than organizing legos. We're going to keep together similar fragments of text that belong in the same group. As a formality, we'll name each of the sections based on their function in the context of the article.</p>
+    <figure class="image"><img src="img/chapter1/article-theverge-functional-brickswithlabels.png" alt=""></figure>
+    <p>So we've marked each element according to their semantic meaning. This is exactly the  kind of behavior and logic that we can expect to see from a web browser. It's our job to tell the browser, in a way that it can understand, what each of these elements mean and how they fit together semantically. If this is not done, then our site will appear as a clump of single text.</p>
+    <p>You might have created such pages or articles using a text editor program like Microsoft Word or Pages. In text editors, achieving effects like "header styles" is a matter of clicking a few buttons. In other words, when we select text in a word editor and press "Header 1" we are assigning a bunch of different features in the background that tell the editor to display stuff in a specific way.</p>
+    <p>Therefore, if we wanted to recreate a page like the above example in a word processor, it would be simple and easy, at which point you could probably close this book and go do something else (Breaking Bad would be a good alternative). The problem is that we want to display this article on the web, which must be displayed in a browser, and never in a text editing program.</p>
+    <footer>
+        <p class="chapter-end-info">End Of Chapter 1</p>
+    </footer>
+  </article>
+  <nav class="book-nav" role="navigation">
+    <ul class="book-chapter-menu">
+        <li class="book-chapter-menu__item next-chapter"><span class="chapter-number">Chapter 2</span><a href="chapter2.html">Let's build our first website</a></li>
+        <li class="book-chapter-menu__item prev-chapter"><span class="chapter-number"></span><a href="chapter0.html">Foreword</a></li>
+    </ul>
+  </nav>
+  <script src="js/prism.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-600043-25', 'auto');
+  ga('send', 'pageview');
+
+</script></body>
+</html>

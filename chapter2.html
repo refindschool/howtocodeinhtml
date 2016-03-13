@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" class="language-markup">
+<head>
+  <title>Chapter 2: Let's build our first website</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+  <link href="css/main.min.css" rel="stylesheet">
+
+
+<link rel="icon"
+      type="image/png"
+      href="favicon.png">
+</head>
+<body>
+  <a href="index.html#toc" class="go-to-toc"><img src="img/toc-icon.png" alt="Table of contents icon"></a>
+  <p class="follow-me"><a href="https://twitter.com/varjs" class="twitter-follow-button" data-show-count="false" data-lang="en" data-size="large">follow me @varjs</a></p>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  <article class="book-chapter" role="main">
+    <header>
+        <h1>Let's build our first website</h1>
+        <p class="chapter-info">Chapter 2</p>
+    </header>
+    <p>Let's suppose that we want to build a webpage with a job posting. It should look something like this:</p>
+    <figure class="image"><img src="img/chapter2/job-post-clean.png" alt=""></figure>
+    <p>Before creating any kind of web page, it's a good idea to divide the content into smaller components by their importance. Let's now try to identify and highlight each element of this job posting, just as we did in the example from The Verge.</p>
+    <figure class="image"><img src="img/chapter2/annotated-job-post.png" alt=""></figure>
+    <p>A brief analysis will help us to better understand which areas of the text should stand out in the job posting. Red indicates the headline text. Green indicates the accompanying image. And purple marks the two paragraphs (or "body") of the job posting.</p>
+    <p>Let's return for a moment to the analogy of word processors and text editing programs where web pages could be created in regular text documents. Perhaps Open, Notepad, or Word, would contain the text of the announcement, and then save as a text file. It should work right?</p>
+    <figure class="image"><img src="img/chapter2/job-post-textmate.png" alt=""></figure>
+    <p>If you check this in a web browser, you get the following:</p>
+    <figure class="image"><img src="img/chapter2/job-post-browser.png" alt=""></figure>
+    <p>However, this doesn't look like what we designed, does it? It's just a mass of text and doesn't display a picture. What now? Maybe we should try to create this post in Word or Photoshop? We don't exactly want to do this. We've made an error here that we'll soon fix. The key problem is that we've created a website with only plain text.</p>
+    <p>A web browser cannot understand how to display a page properly with only plain text &mdash; it doesn't know which part of the text should be the title or which part should be a picture. In order to display the page properly, we need to define each element by the function of the text and pass this information to the browser. We've partly done it. Let's do a little definition work and use proper syntax so browser will also understand it:</p>
+    <figure class="image"><img src="img/chapter2/job-post-functional-bricks.png" alt=""></figure>
+    <p>As you can see, there are special markings within the text. We'll get to these later. For now, it's best to simply try to copy them exactly as they are, from top to bottom, as if you were building with blocks, one by one.</p>
+    <p>You should get something like the following:</p>
+    <figure class="image"><img src="img/chapter2/job-post-code.png" alt=""></figure>
+    <p>Next, save the HTML file. By the way: I recommend you <a href="http://sublimetext.com">Sublime Text Editor</a> which is one of the best code editors out there.</p>
+    <figure class="image"><img src="img/chapter2/job-post-save.png" alt=""></figure>
+    <p>Now let's try the new file in a web browser.</p>
+    <figure class="image"><img src="img/chapter2/job-post-html-browser.png" alt=""></figure>
+    <p>It looks a bit better. Each section of the text is now formatted differently, and the picture is also displayed. This is not the final version though. The lack of color, bold text and style doesn't quite match up yet. But before we work on that, let's keep our focus on the structure of the page.</p>
+    <p>First, let's compare the plain text document version of the posting, and the one presented in HTML:</p>
+    <figure class="image"><img src="img/chapter2/job-post-code-comparison.png" alt=""></figure>
+    <p>As a result of surrounding specific text fragments with special tags, we've created a completely different document, which can be understood by the browsers. Way to go!</p>
+    <p>This is called HTML, or Hypertext Markup Language, and is the primary markup language for displaying information for a web browser. In simpler terms, it's a language that uses "tags" (like &lt;this&gt;) to mark text, so that you can describe the text to your browser. This also includes search engines and a few other programs which we'll cover later on. HTML tags are like grammar forms in verbal communication, without them, you cannot build a coherent website, much like you cannot form correct sentences or paragraphs without grammar.</p>
+    <p>In our case, we used only a few simple tags, and below is a list of the functions that each tag performs:</p>
+    <ul>
+        <li><span class="highlight">&lt;h1&gt;</span> - headline (of the first degree)</li>
+        <li><span class="highlight">&lt;img&gt;</span> - picture element</li>
+        <li><span class="highlight">&lt;p&gt;</span> - a paragraph of text</li>
+    </ul>
+    <p>So, if you have a website with a few paragraphs of text, you surround each paragraph with the <span class="highlight">&lt;p&gt;</span> tag. If the text is the main headline, then surround the text with <span class="highlight">&lt;h1&gt;</span>, and so on and so forth.</p>
+    
+    <p>All tag constructions are extremely simple and look like this:</p>
+    <pre data-keep-tags="span"><code>&lt;tagname&gt;content&lt;/tagname&gt;</code></pre>
+    <p>You might have noticed that the second tag is different. This is because each tag must "close," as the saying goes in HTML jargon. The forward-slash appears in the closing tag to tell the browser that this marks the end of an element. For example, all paragraph elements end in <span class="highlight">&lt;/p&gt;</span>, while a Header 1 ends in <span class="highlight">&lt;/h1&gt;</span>.</p>
+    <p>There are also tags which do not need to be enclosed. For example image tags, <span class="highlight">&lt;img&gt;</span>, which are used to insert pictures. In our example above, we used it as follows:</p>
+    
+    <pre data-keep-tags="span"><code>&lt;img src="images/white-cat.jpg"&gt;</code></pre>
+    <p>There are several more tags that do not need to to be "closed", which you will learn about later in this book.</p>
+    <p>One important realization to make about HTML tags is that, like dictionaries contain the vocabulary of a language, so too does HTML have a kind of dictionary that defines tags and describes when and where to use them. At the moment we have covered only a few, but there are many more. The international organization known as The World Wide Web Consortium (W3C) encourages best practices, standards, and compatibility across the web. You can view their definition of HTML elements here: <a href="http://www.w3.org/TR/html-markup/elements.html">http://www.w3.org/TR/html-markup/elements.html</a>.</p>
+    <p>Also, it's helpful to remember that, like natural languages, HTML evolves over time. Today, we use the fifth version of the HTML language, known as HTML5. </p>
+    <p>Returning to our example, it should look like the following in HTML code:</p>
+    <pre data-keep-tags="span"><code>&lt;h1&gt;We're looking for an HTML and CSS developer&lt;/h1&gt;
+
+&lt;img src="images/white-cat.jpg"&gt;
+
+&lt;p&gt;For our client, The Cat Factory, we need a skilled web developer in HTML and CSS. We offer a competitive salary, a bag of cat food, and toys.&lt;/p&gt;
+
+&lt;p&gt;Don't wait, apply now! Our crazy team is waiting for you right meow!&lt;/p&gt;</code></pre>
+
+    <p>Notice that it contains two paragraphs of text, marked within <span class="highlight">&lt;p&gt;</span><span class="highlight">&lt;/p&gt;</span> tags:</p>
+    <pre data-keep-tags="span"><code>&lt;p&gt;For our client, The Cat Factory, we need a skilled web developer in HTML and CSS. We offer a competitive salary, a bag of cat food, and toys.&lt;/p&gt;
+
+&lt;p&gt;Don't wait, apply now! Our crazy team is waiting for you right meow!&lt;/p&gt;</code></pre>
+    <p>Suppose that we want the reader of our ad to pay particular attention to a certain part in a paragraph. Let's say that we wanted to mark the part of the text that says "we need a skilled web developer in HTML and CSS." How would an HTML tag let the browser know? The answer is the <span class="highlight">&lt;strong&gt;</span> element, which will surround parts of text that should represent a strong importance for its contents.</p>
+
+  <pre data-keep-tags="span"><code>&lt;p&gt;For our client, The Cat Factory, <span class="highlight">&lt;strong&gt;we need a skilled web developer 
+in HTML and CSS&lt;/strong&gt;</span>. We offer a competitive salary, a bag of cat food,
+and toys.&lt;/p&gt;
+
+&lt;p&gt;Don't wait, apply now! Our crazy team is waiting for you right meow!&lt;/p&gt;</code></pre>
+  <p>Note that the <span class="highlight">&lt;strong&gt;</span> tag surrounds the text, and also sits within the <span class="highlight">&lt;p&gt;</span> tag. In programming terms, we would say that the <span class="highlight">&lt;strong&gt;</span> tag is a "child" element within <span class="highlight">&lt;p&gt;</span> because it nests within the parent. There are many tags that can nest within other tags, while many others cannot. Each tag has a specific list of possible HTML elements which it can contain (or be contained by), and you will need to check whether a certain tag is allowed or not. You can think of it like smaller blocks combining to make a bigger block piece (in this case the <span class="highlight">&lt;strong&gt;</span> block is a component of <span class="highlight">&lt;p&gt;</span>, which is in turn a block of the whole text).</p>
+    
+
+    <p>Here is what it looks like on the web.</p>
+    <figure class="image"><img src="img/chapter2/job-post-strong-browser.png" alt=""></figure>
+    <p>Take note that a web browser we used above displayed the fragment in bold, but this is not always a rule. It's very common that &lt;strong&gt; makes text bold, but sometimes it will be ignored. The reason for using this HTML tag in this text is a good example of how nesting works, but visual effects (like bold) can be better achieved through a language called CSS, which we will learn more about in a moment.</p>
+    <footer>
+        <p class="chapter-end-info">End Of Chapter 2</p>
+    </footer>
+  </article>
+  <nav class="book-nav" role="navigation">
+    <ul class="book-chapter-menu">
+        <li class="book-chapter-menu__item next-chapter"><span class="chapter-number">Chapter 3</span><a href="chapter3.html">Features of Perfect HTML Code</a></li>
+        <li class="book-chapter-menu__item prev-chapter"><span class="chapter-number">Chapter 1</span><a href="chapter1.html">Websites and Legos</a></li>
+    </ul>
+  </nav>
+  <script src="js/prism.js"></script>
+  <script src="js/prism-keep-tags.js"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-600043-25', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

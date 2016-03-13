@@ -1,0 +1,82 @@
+@page {
+  margin: 40pt 30pt 40pt 30pt;
+
+  @bottom-right {
+    content: counter(page);
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+}
+
+@page front {
+    @bottom-right {
+        content: "";
+    }
+}
+
+@page frontmatter {
+  @bottom-right { content: none; }
+}
+
+
+.book-chapter {
+  width: auto !important;
+}
+
+.not-in-pdf,
+.follow-me,
+.book-nav,
+.go-to-toc {
+  display: none;
+}
+
+.image {
+  width: 100% !important;
+  margin: 0 !important;
+  display: block;
+  box-sizing: border-box !important;
+}
+
+.image img {
+  page-break-before: avoid;
+}
+
+.book-chapter pre {
+  word-wrap: break-word;
+  prince-linebreak-magic: none;
+  word-break: break-word;
+  white-space: pre-wrap;
+  font-family: "Monaco" !important;
+  page-break-inside: avoid;
+
+}
+
+.book-chapter pre code {
+  word-wrap: break-word;
+  word-break: break-word;
+  prince-linebreak-magic: none;
+  font-family: "Courier New" !important;
+  font-size: 14pt !important;
+}
+
+.book-chapter footer {
+  display: none;
+}
+
+.book-chapter p {
+  padding-bottom: 5px;
+  padding-top: 5px;
+  margin: 0;
+  font-size: 14pt !important;
+  line-height: 25pt !important;
+}
+
+.mc_embed_signup,
+#mc-embedded-subscribe-form {
+  display: none;
+}
+
+.frontcover,
+.tocpage {
+  page: frontmatter;
+}

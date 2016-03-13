@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" class="language-markup">
+<head>
+  <title>Chapter 12: Multi-Column Layout</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+  <link href="css/main.min.css" rel="stylesheet">
+  
+  
+<link rel="icon" 
+      type="image/png" 
+      href="favicon.png">
+</head>
+<body>
+  <a href="index.html#toc" class="go-to-toc"><img src="img/toc-icon.png" alt="Table of contents icon"></a>
+  <p class="follow-me"><a href="https://twitter.com/varjs" class="twitter-follow-button" data-show-count="false" data-lang="en" data-size="large">follow me @varjs</a></p>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  <article class="book-chapter" role="main">
+    <header>
+      <h1>Multi-Column Layout</h1>
+      <p class="chapter-info">Chapter 12</p>
+    </header>
+    <p>In the previous example, we learned, among other things, the <span class="highlight">&lt;div&gt;</span> tag. You know that they have no semantic meaning and serve primarily as a container for other blocks. Usually you add them to apply various visual changes through CSS for larger parts of the website that resemble boxes or rectangles.</p>
+    <p>So far, we have managed to get a view of the article, create a menu, and a comment form. Let's put them all together in a 3-column layout with the menu on the left, article and comment forms in the middle, and a list of materials related to the article on the right. Let's assume that the whole of this page is 960 pixels wide, centered.</p>
+    <figure class="image"><img src="img/chapter12/column-layout.png" alt=""></figure>
+    <p>Let's try again to identify what we see in the graphic, functional parts, which are mapped by HTML. We have the left column which contains the menu. The central column contains the main content of the page. The right column contains a short text. </p>
+    <p>Let's start from the container that holds these three columns. As we noted earlier, we want all of them to be contained within a space no wider than 960 pixels. HTML does not have social tags for such a circumstance, we we'll use our old friend, the &lt;div&gt; tag.</p>
+    
+    <pre data-keep-tags="span"><code>&lt;div class="main-container"&gt;&lt;/div&gt;</code></pre>
+    <p>We have just given <span class="highlight">&lt;div&gt;</span> the class <span class="highlight">main-container</span> which says that this is the main container for other item on our website.</p>
+
+    <p>Now to add the place for menu. It will be included in <span class="highlight">&lt;div class="site-menu"&gt;</span>:</p>
+
+    <pre data-keep-tags="span"><code>&lt;div class="main-container"&gt;
+  <span class="highlight">&lt;nav class="site-menu"&gt;&lt;/nav&gt;</span>
+&lt;/div&gt;</code></pre>
+<p>Moving forward, we place the container for the main content in the middle of the column:</p>
+<pre data-keep-tags="span"><code>&lt;div class="main-container"&gt;
+  &lt;nav class="site-menu"&gt;&lt;/nav&gt;
+  <span class="highlight">&lt;div class="main-content"&gt;&lt;/div&gt;</span>
+&lt;/div&gt;</code></pre>
+<p>And now the right column, or "sidebar":</p>
+<pre data-keep-tags="span"><code>&lt;div class="main-container"&gt;
+  &lt;nav class="site-menu"&gt;&lt;/nav&gt;
+  &lt;div class="main-content"&gt;&lt;/div&gt;
+  <span class="highlight">&lt;aside class="sidebar"&gt;&lt;/aside&gt;</span>
+&lt;/div&gt;</code></pre>
+
+<p>Now let's analyze our next step based on the picture. What content should the left-column contain? As the name suggests, this should be our menu from the previous exercises:</p>
+
+<pre data-keep-tags="span"><code>&lt;div class="main-container"&gt;
+  <span class="highlight">&lt;nav class="site-menu"&gt;
+    insert menu code here
+  &lt;/nav&gt;</span>
+  &lt;div class="main-content"&gt;&lt;/div&gt;
+  &lt;aside class="sidebar"&gt;&lt;/aside&gt;
+&lt;/div&gt;</code></pre>
+
+<p>I've put placeholder text inside of the <span class="highlight">&lt;nav&gt;</span> tag for the menu code to preserve readability. When we are ready to publish our website, we will simply copy the code from our menu and paste it between <span class="highlight">&lt;nav&gt;</span> and <span class="highlight">&lt;/nav&gt;</span>.</p>
+
+<p>The middle column will contain the article and comment form:</p>
+
+<pre data-keep-tags="span"><code>&lt;div class="main-container"&gt;
+  &lt;nav class="site-menu"&gt;
+    insert menu code here
+  &lt;/nav&gt;
+  &lt;div class="main-content"&gt;
+    <span class="highlight">&lt;article&gt;insert article code here&lt;/article&gt;</span>
+    <span class="highlight">&lt;form&gt;insert form code here&lt;/form&gt;</span>
+  &lt;/div&gt;
+  &lt;aside class="sidebar"&gt;&lt;/aside&gt;
+&lt;/div&gt;</code></pre>
+<p>For the right column, we'll put a side item unrelated to the main content, using the tag <span class="highlight">&lt;aside&gt;:</p>
+<pre data-keep-tags="span"><code>&lt;div class="main-container"&gt;
+  &lt;nav class="site-menu"&gt;
+    insert menu code here
+  &lt;/nav&gt;
+  &lt;div class="main-content"&gt;
+    &lt;article&gt;insert article code here&lt;/article&gt;
+    &lt;form&gt;insert form code here&lt;/form&gt;
+  &lt;/div&gt;
+  &lt;aside class="sidebar"&gt;
+    <span class="highlight">&lt;div&gt;insert sidebar code here&lt;/div&gt;</span>
+  &lt;/aside&gt;
+&lt;/div&gt;</code></pre>
+<p>Ok, our HTML is ready. Now it's time for CSS. Our first task is to set the maximum width for the main container with class "main container":</p>
+<pre data-keep-tags="span"><code class="language-css">.main-container {
+  max-width: 960px;
+}</code></pre>
+<p>We've given it the property <span class="highlight">max-width</span>, so whatever happens, the width of the entire container named with a class <span class="highlight">main-container</span> will never be wider than 960 pixels.</p>
+<p>Next to center the block. This is done by setting automatic margins:</p>
+<pre data-keep-tags="span"><code class="language-css">.main-container {
+  max-width: 960px;
+  <span class="highlight">margin: auto;</span>
+}</code></pre>
+<p>With this code, the browser will take up all free space around .main-container and distribute the space equally between the two margins.</p>
+<figure class="image"><img src="img/chapter12/margin-auto.png" alt=""></figure>
+
+<p>We now have all the code responsible for the main container. Let's proceed to code our three columns. Let the container of the menu have 20% of the available width. This is done simply by specifying a percentage value:</p>
+<pre data-keep-tags="span"><code class="language-css">
+.site-menu {
+  width: 20%;
+}</code></pre>
+<p>And a similar width for the right-hand column:</p>
+<pre data-keep-tags="span"><code class="language-css">.sidebar {
+  width: 20%;
+}</code></pre>
+<p>Since the left and right column have the same properties, we can group them with a comma:</p>
+<pre data-keep-tags="span"><code class="language-css">.site-menu,
+.sidebar {
+  width: 20%;
+}</code></pre>
+<p>Now let's get to the middle column. It will take the remaining width (60%), as the two side columns occupy a total of 40%.</p>
+<pre data-keep-tags="span"><code class="language-css">.main-content {
+  width: 60%;
+}</code></pre>
+<p>Unfortunately, our containers still appear in a block (one above the other). To set them next to each other, we need to give them a special CSS float property. We use it to tell the browser that we want X item closer to the left or right edge of the container in which it is placed. When one container has elements "floated" to the left edge, they will set up next to each other and we can cleverly take advantage of this mechanic. 
+</p>
+<p>This is because the left-hand column "sticks" to the left edge of the main container.</p>
+<p>Before we get to use CSS float, however, I want to show you the most common use case of this property. Imagine that you have an image set directly within text:</p>
+<pre data-keep-tags="span"><code>&lt;p&gt;&lt;img src="cat.jpg" alt="angry cat is watching you"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dui metus, commodo vitae sem vel, tempus pellentesque nunc. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.  Etiam consequat, nisi ac cursus mattis, mi eros lacinia tortor, nec pellentesque ligula quam mattis nulla.&lt;/p&gt;</code></pre>
+<p>By default, it looks like that:</p>
+    <figure class="image"><img src="img/chapter12/float-first.png" alt=""></figure>
+
+<p>This happens because the tag <span class="highlight">&lt;img&gt;</span> is is a "line" component, so it was inserted at the beginning of the line and the text will simply follow it.</p>
+<p>However, if we set the image to "float" to the "right" we will see something much better:</p>
+<pre data-keep-tags="span"><code class="language-css">img {
+  float: right;
+}</code></pre>
+    <figure class="image"><img src="img/chapter12/float-right.png" alt=""></figure>
+<p>The picture is now "floating" on the right edge of the text in which it was placed. In this case, the edges of the paragraph &lt;p&gt;.
+</p>
+<p>Now let's set <span class="highlight">float</span> to <span class="highlight">left</span>:
+</p>
+    <figure class="image"><img src="img/chapter12/float-left.png" alt=""></figure>
+<p>As you can see, the picture is now "floating" to the left edge of the paragraph, and the text wrapped around it on the right side.</p>
+<p>Returning to our columns, we can do the same thing with to all columns that we want to position "left" at the edge of the container. Notice that we're about to float all containers as grouped with commas:</p>
+<pre data-keep-tags="span"><code class="language-css">.site-menu,
+.main-content,
+.sidebar {
+  float: left;
+}</code></pre>
+<p>Bingo! See how our browser now displays the elements:</p>
+    <figure class="image"><img src="img/chapter12/column-pure.png" alt=""></figure>
+
+    <p>Let's analyze what happened after we "floated left." Each element will attempt to float left in terms of their priority in the list. So in this case, .site-nav took the leftmost edge, and .main-content was next in line to fill in the left-most space. Finally, the .sidebar filled in the last "left" edge, completing the arrangement.</p>
+
+<p>Awesome! We've just obtained a multi-column arrangement. To further illustrate this topic, let's add background colors for each column:</p>
+<pre data-keep-tags="span"><code class="language-css">.main-content {
+  width: 60%;
+  <span class="highlight">background-color: LightPink;</span>
+}
+
+.site-menu {
+  <span class="highlight">background-color: LightGoldenRodYellow;</span>
+}
+
+.sidebar {
+  <span class="highlight">background-color: LightSteelBlue;</span>
+}</code></pre>
+<p>The effect is satisfactory. The following result shows that we managed to divide the main container columns correctly:</p>
+    <figure class="image"><img src="img/chapter12/columns-bgr.png" alt=""></figure>
+
+<p>Our final CSS code looks like this:</p>
+<pre data-keep-tags="span"><code class="language-css">
+.main-container {
+  max-width: 960px;
+  margin: auto;
+}
+
+.site-menu,
+.main-content,
+.sidebar {
+  float: left;
+}
+
+.site-menu,
+.sidebar {
+  width: 20%;
+}
+
+.main-content {
+  width: 60%;
+  background-color: LightPink;
+}
+
+.site-menu {
+  background-color: LightGoldenRodYellow;
+}
+
+.sidebar {
+  background-color: LightSteelBlue;
+}</code></pre>
+<p>With this code, we've created a simply layout with three columns. Now, you just need to paste the remaining HTML and CSS code from our previous exercises and our job is done!</p>
+<p>You have completed your first website!</p>
+    <footer>
+        <p class="chapter-end-info">End Of Chapter 12</p>
+    </footer>
+  </article>
+  <script src="js/prism.js"></script>
+  <script src="js/prism-keep-tags.js"></script>
+  <nav class="book-nav" role="navigation">
+    <ul class="book-chapter-menu">
+        <li class="book-chapter-menu__item next-chapter"><span class="chapter-number">Chapter 13</span><a href="chapter13.html">What's Next?</a></li>
+        <li class="book-chapter-menu__item prev-chapter"><span class="chapter-number">Chapter 11</span><a href="chapter11.html">Form Extras</a></li>
+    </ul>
+  </nav>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-600043-25', 'auto');
+  ga('send', 'pageview');
+
+</script></body>
+</html>

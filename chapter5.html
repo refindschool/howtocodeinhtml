@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" class="language-markup">
+<head>
+  <title>Chapter 5: Site Visuals in CSS3</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+  <link href="css/main.min.css" rel="stylesheet">
+
+
+<link rel="icon" 
+      type="image/png" 
+      href="favicon.png">
+</head>
+<body>
+  <a href="index.html#toc" class="go-to-toc"><img src="img/toc-icon.png" alt="Table of contents icon"></a>
+  <p class="follow-me"><a href="https://twitter.com/varjs" class="twitter-follow-button" data-show-count="false" data-lang="en" data-size="large">follow me @varjs</a></p>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  <article class="book-chapter" role="main">
+    <header>
+      <h1>Site Visuals in CSS3</h1>
+      <p class="chapter-info">Chapter 5</p>
+    </header>
+    <p>You may have noticed that, with exception of our images, our site does not look very interesting. Black text on a white background isn't very welcoming to our visitors.
+Let's work on the appearance of our site with CSS (Cascading Style Sheets). Using this language, we can manipulate traits of the site like color, font size, and many other qualities. There is a huge list of possibilities available with CSS.</p>
+<p>In the previous sections, we used HTML to describe the content of the site, and divide it into fragments according to their importance. CSS will be responsible for the appearance of our web sites.  CSS code can be placed in a separate file with the extension <span class="highlight">.css</span> and inserted via a special HTML tag. You can also put it directly into the HTML document.</p>
+<p>Imagine for a moment, in this abstract example, that we want to construct a house with CSS code, where we choose items such as windows, doors, roofing, walls, gutters and so on. We would want to buy windows of specific sizes, and paint for each of the necessary parts. If we built this house in CSS, one of the many solutions to this task might look like this:</p>
+    
+    <pre data-keep-tags="span"><code class="language-css">roof {
+  background-color: green;
+}
+
+doors {
+  background-color: yellow;
+  width: 100px;
+  height: 300px;
+}
+
+windows {
+  border: 5px solid brown;
+  width: 150px;
+}</code></pre>
+    <p>Let's analyze the "roof" block of this code from top to bottom (note that top-to-bottom reading is a rule when reading all types of code, not just HTML and CSS).</p>
+    <pre data-keep-tags="span"><code class="language-css">roof {
+  background-color: green;
+}</code></pre>
+  <p>If we translate the code above into normal English, we have chosen an element called "roof" and set the background color to green.</p>
+  <pre data-keep-tags="span"><code class="language-css">windows {
+  border: 5px solid brown;
+  width: 150px;
+}</code></pre>
+<p>The code above says, "for all windows, set the following: a frame (border) with a width of 5 pixels (5px), marked by a continuous line (solid) color (brown). Also, the window itself should have a (width) of 150 pixels (150px).</p>
+<p>You might have noticed a recurring pattern in the code. On the first line, we write the name of the element (termed "selector"), and then define the appearance of that element between bracket. </p>
+<p>The template has the basic structure shown below:</p>
+<pre><code>selector {
+  property_name: property:value;
+}</code></pre>
+<p>This type of construction is a typical CSS rule. The rule consists in turn of a selector (everything before the first bracket) followed by a list of properties that you write between the brackets.</p>
+<p>There are various way to specify exactly what we want to design. Let's say that we only wanted to specify design for windows on the ground floor. What then? We could write something like:</p>
+
+<pre data-keep-tags="span"><code class="language-css">ground floor window {
+  border: 5px solid brown;
+  width: 150px;
+}</code></pre>
+<p>The result is that only the selector has changed. Instead of "window {" we have specified "ground floor window {"</p>
+<p>This code reads from left to right like "find the ground floor, and then find its window and set the following values." If we put a sub-selector under "ground floor windows" like:</p>
+<pre data-keep-tags="span"><code class="language-css">adjacent wall windows {</code></pre>
+<p>Then we're telling the browser: "find the ground floor window, windows next to it, and fill them with the following values," and so on. If you remember the analogy in which we talked about nested HTML tags as the children and parents, this is the same concept, elements nested within other elements.</p>
+<p>Unfortunately a browser can't quite build a house, but our example tells us how CSS works. This analogy is useful because as we code, we're not always able to see the changes. But we can think of paragraphs (<span class="highlight">&lt;p&gt;</span>) as windows, and doors as the header (<span class="highlight">&lt;h1&gt;</span>), etc.</p>
+
+<p>It would look like this:</p>
+<pre data-keep-tags="span"><code class="language-css">p {
+}
+
+h1 {
+}</code></pre>
+<p>Let's apply what we've learned in this analogy to our example and use the same ideas to add a little color and life to the Justin Beaver article.</p>
+<p>Recall that our code looks like this:</p>
+ <pre data-keep-tags="span"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;Justin Beaver fascinated by HTML&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;article&gt;
+      &lt;header&gt;
+        &lt;h1&gt;Justin Beaver: Ever since I learned HTML, my life has made a complete 180&lt;/h1&gt;
+        &lt;p&gt;Posted by: Damian Wielgosik&lt;/p&gt;
+      &lt;/header&gt;
+      &lt;p&gt;Justin Beaver confessed something that even his greatest fans would have never expected of the skilled musicians and lyricist. The young rock-and-roller admitted that since he typed his first title tag, his life became easier. It has been reported by those surrounding the Canadian that Beaver's private mentors, Ryan Loseling and Nicolas Crate, often walk around Los Angeles disputing what a great tool the HTML validator is.&lt;/p&gt;
+      &lt;figure&gt;
+        &lt;img src="cat.jpg" alt="Justin Beaver's cat is pleased"&gt;
+        &lt;figcaption>Justin Beaver's happy cat&lt;/figcaption&gt;
+      &lt;/figure&gt;
+      &lt;p&gt;Beaver has already created some websites and does not intend to stop there. &lt;q&gt;I will probably have a song about HTML on my next album,&lt;/q&gt; - the artist added.
+      &lt;/p&gt;
+    &lt;/article&gt;</span>
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>Recall the analogy of building a house. Instead of building doors, windows, etc., we are dealing with elements like <span class="highlight">&lt;article&gt;</span>, <span class="highlight">&lt;p&gt;</span>, <span class="highlight">&lt;header&gt;</span>, <span class="highlight">&lt;body&gt;</span>, <span class="highlight">&lt;figcaption&gt;</span> and so on. These tags build the page and now CSS will help to give them style.</p>
+
+<p>I've prepared a screenshot on the next page so you can see how our modifications will change the resulting website.</p>
+<figure class="image"><img src="img/chapter5/article-final-proposition.png" alt=""></figure>
+
+<p>As you can see, much has changed. We've added simple colors, backgrounds, changed the font style and so on. Let's proceed step-by-step for how to accomplish the effects in the image above.</p>
+<p>The first step is to save the entire HTML code into a separate file. For me it's called <span class="highlight">article.html</span>. Then create a separate file in which we keep our CSS rules. Let it be <span class="highlight">main.css</span>.</p>
+<p>The files look like this on my computer:</p>
+
+<figure class="image"><img src="img/chapter5/article-file-system.png" alt=""></figure>
+<p>We can now try to open <span class="highlight">article.html</span> in a browser and the <span class="highlight">main.css</span> file using a text editor. I recommend <a href="http://sublimetext.com">Sublime Text Editor</a> or <a href="http://macromates.com/">TextMate</a>. After each change made in main.css, we can refresh the browser the page in order to update its appearance. </p>
+
+
+<p>We now need to open the article.html in a browser, and load code from the main.css file. This is done through the tag <span class="highlight">&lt;link&gt;</span> in the <span class="highlight">&lt;head&gt;</span> in the HTML code.   Just add a tag like this in the head:</p>
+
+<pre data-keep-tags="span"><code>&lt;link rel="stylesheet" href="main.css"&gt;</code></pre>
+<p>The "href" attribute indicates where the file is located. "Stylesheet" tells us that it is a CSS style sheet.</p>
+<p>Okay, to start making changes to visual appearance in CSS, let's try to find the right selector for the heading, similar to the code for windows and walls.</p>
+<pre data-keep-tags="span"><code class="language-css">h1 { 
+}</code></pre>
+
+<p>Here we are! It is here that we can tell the browser "for all elements in <span class="highlight">&lt;h1&gt;</span>, apply the following appearances." Note that the braces are currently empty. Let's try to tell it that we want the heading text to be green. We'll apply the property "color" and set it to "green."</p>
+
+<pre data-keep-tags="span"><code class="language-css">h1 {
+  color: green; 
+}</code></pre>
+<p>The operation for this rule is explained in the diagram below:</p>
+<figure class="image"><img src="img/chapter5/selector-explanation.png" alt=""></figure>
+<p>Let's check out how our page looks after the changes!</p>
+<figure class="image"><img src="img/chapter5/article-green-header.png" alt=""></figure>
+<p>Yes! The title is indicated in green.  </p>
+<p>Now we want to address the next section with information about the author. Let's say we want the text in white with a red background as shown a few pages ago. This is the current HTML code:</p>
+
+<pre data-keep-tags="span"><code>&lt;article&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Justin Beaver: Ever since I learned HTML, my life has made a complete 180.&lt;/h1&gt;
+    <span class="highlight">&lt;p&gt;Posted by: Damian Wielgosik&lt;/p&gt;</span>
+  &lt;/header&gt;</code></pre>
+
+  <p>Let's use CSS, and find the appropriate selector ("p {" ) and try to give it a background red color and a white color text:</p>
+<pre data-keep-tags="span"><code class="language-css">p {
+    background-color: red;
+    color: white;
+}</code></pre>
+<p>Our main.css code should currently look like this:</p>
+<pre data-keep-tags="span"><code class="language-css">h1 {
+  color: green; 
+}
+
+p {
+    background-color: red;
+    color: white;
+}</code></pre>
+<p>As you can see, we add a rule one under the other. Time to see how it looks now our website...</p>
+<figure class="image"><img src="img/chapter5/article-red-paras.png" alt=""></figure>
+<p>Oops, that's not quite right. It seems all the other paragraphs have also been changed to have the new background and text color. It's a problem with our code, because we used the following:</p>
+<pre data-keep-tags="span"><code class="language-css">p {
+    background-color: red;
+    color: white;
+}</code></pre>
+<p>What we actually told the browser is to "find <strong>all</strong> <span class="highlight">&lt;p&gt;</span> elements and apply changes." However, we only wanted to change the paragraph in the header line of the article.
+<p>We now need to modify the code so that the above selector to only apply to the <span class="highlight">&lt;p&gt;</span> in <span class="highlight">&lt;header&gt;</span>, which is a "child" of the <span class="highlight">&lt;article&gt;</span>. The code should reflect this hierarchy:</p>
+
+
+<pre data-keep-tags="span"><code class="language-css">article header p {
+    background-color: red;
+    color: white;
+}</code></pre>
+<p>Let's see the effect of these changes.</p>
+<figure class="image"><img src="img/chapter5/article-better-selector.png" alt=""></figure>
+<p>Much better! It seems we were able to target the correct paragraph. But how did this happen? Well, we used the above code to tell the browser to know which tags the CSS selector should target. We do this by examining the HTML code and finding all the tags which should match the selector. In our case, we had nested tags of <span class="highlight">&lt;article&gt;</span>, <span class="highlight">&lt;header&gt;</span>, and <span class="highlight">&lt;p&gt;</span>, so the CSS selector "article header p" let's us specify exactly where the changes will be applied.</p>
+<p>Let's move on to the image in the article.</p>
+<p>The dimensions of this article, let's say, should be 600 pixels wide. And remember that our corresponding HTML tag for the image is <span class="highlight">&lt;figure&gt;</span>. Let's specify our CSS code to reflect this:</p>
+
+<pre data-keep-tags="span"><code class="language-css">article figure  {
+    width: 600px;
+}</code></pre>
+
+<p>With this code, every <span class="highlight">&lt;figure&gt;</span> in the <span class="highlight">&lt;article&gt;</span> tag will have a width of 600 pixels. Note that the "article" distinction would be helpful if we had multiple images throughout the blog post and wanted to specify different criteria for each. But since we only have one image, let's move on to the border code:</p>
+
+
+<pre data-keep-tags="span"><code class="language-css">article figure  {
+    width: 600px;
+    border: 3px solid black;
+}</code></pre>
+
+<p>Here we've added a property called "border." After the colon, we specify the width of the border (3 pixels), and the style of the border "solid" with the color "black."</p>
+
+<p>Let's see how it looks:</p>
+
+<figure class="image"><img src="img/chapter5/article-border-overflow.png" alt=""></figure>
+
+<p>It looks like we have a problem. While the border is displayed with the correct style and color, the image displays beyond our 600 pixels. This is because we established the width of the element <span class="highlight">&lt;figure&gt;</span>, but the <span class="highlight">&lt;img&gt;</span> tag does not have any fixed width and thus keeps its original size. It would be nice if the image took 100% of the width of its parent <span class="highlight">&lt;figure&gt;</span>. This is coded very simply:</p>
+
+<pre data-keep-tags="span"><code class="language-css">article figure img {
+    width: 100%;
+}</code></pre>
+<p>It now looks like this:</p>
+<figure class="image"><img src="img/chapter5/article-good-border.png" alt=""></figure>
+<p>It would be nice to add some "padding" or space between the border and image. We do this by adding the property "padding."  We can modify the code as follows:</p>
+<pre data-keep-tags="span"><code class="language-css">article figure  {
+    width: 600px;
+    border: 3px solid black;
+    <span class="highlight">padding: 5px;</span>
+}</code></pre>
+<p>The result:</p>
+<figure class="image"><img src="img/chapter5/article-border-padding.png" alt=""></figure>
+<p>You can try yourself to modify the value of the "padding" and see how the white gap changes between the picture and the border.</p>
+<p>Our page is looking good now, but we're not yet finished. The current paragraph text extends almost the entire width of the browser window which isn't very readable. Perhaps it would be fitting to somehow reduce the width of the text? Maybe limit it to 800 pixels?</p>
+<p> Let's choose a special CSS selector for this:</p>
+
+<pre data-keep-tags="span"><code class="language-css">article {
+    width: 800px;
+}</code></pre>
+<p>That's better.</p>
+<p>Now what about font? If you look at the original image of our site, we have a slightly different font. Just as you can edit font styles in Microsoft Word, you can edit them in CSS too. In order to specify font, you want to add this property to the highest tag so that it applies to all text within that tag. For example, we'll set the font as a property for <span class="highlight">&lt;body&gt;</span>, so that every element below <span class="highlight">&lt;body&gt;</span> will have this setting. In the picture, I used a font called Verdana.</p>
+<p>Let's try to apply it:</p>
+<pre data-keep-tags="span"><code class="language-css">body {
+    font-family: Verdana;
+}</code></pre>
+<p>You can see the differences by deleting this line or changing the font-family to a different style. For the header, paragraphs, etc. the browser will display everything in Verdana.</p>
+<p>Finally, our code in the main.css file should look like this:</p>
+<pre data-keep-tags="span"><code class="language-css" >body {
+    font-family: Verdana;
+}
+
+article {
+    width: 800px;
+}
+
+article header h1 {
+    color: green;
+}
+
+article header p {
+    background-color: red;
+    color: white;
+}
+
+article figure  {
+    width: 600px;
+    border: 3px solid black;
+    padding: 5px;
+}
+
+article figure img {
+    width: 100%;
+}</code></pre>
+<p>In general, it's good practice to start your code with the most general selectors and move into more complex ones. I started from body, followed by article, and so on, going from top to bottom. The higher the detail, the lower it sits in the list.</p>
+    <footer>
+        <p class="chapter-end-info">End Of Chapter 5</p>
+    </footer>
+  </article>
+  <nav class="book-nav" role="navigation">
+    <ul class="book-chapter-menu">
+        <li class="book-chapter-menu__item next-chapter"><span class="chapter-number">Chapter 6</span><a href="chapter6.html">Menu, Please!</a></li>
+        <li class="book-chapter-menu__item prev-chapter"><span class="chapter-number">Chapter 4</span><a href="chapter4.html">HTML Exercise: Coding a Blogpost</a></li>
+    </ul>
+  </nav>
+    <script src="js/prism.js?123"></script>
+    <script src="js/prism-keep-tags.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-600043-25', 'auto');
+  ga('send', 'pageview');
+
+</script></body>
+</html>

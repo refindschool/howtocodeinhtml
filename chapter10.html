@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" class="language-markup">
+<head>
+  <title>Chapter 10: Differences Between &lt;div&gt; and &lt;span&gt;</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta charset="utf-8">
+  <link href="css/main.min.css" rel="stylesheet">
+  
+
+  
+<link rel="icon" 
+      type="image/png" 
+      href="favicon.png">
+</head>
+<body>
+  <a href="index.html#toc" class="go-to-toc"><img src="img/toc-icon.png" alt="Table of contents icon"></a>
+  <p class="follow-me"><a href="https://twitter.com/varjs" class="twitter-follow-button" data-show-count="false" data-lang="en" data-size="large">follow me @varjs</a></p>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  <article class="book-chapter" role="main">
+  <header>
+    <h1>Differences Between &lt;div&gt; and &lt;span&gt;</h1>
+    <p class="chapter-info">Chapter 10</p>
+  </header>    
+  <p>The elements from last chapter appear one after the other on the same horizontal line. These elements are behaving as plain text, and will just be displayed one next to the other, even though they have certain sizes and other properties that don't apply to texts. It shouldn't be surprising, as <span class="highlight">&lt;label&gt;</span>, <span class="highlight">&lt;input&gt;</span>, and <span class="highlight">&lt;textarea&gt;</span> are all elements of one group called inline-block. Inline-block elements can have different sizes, however browser will always display them horizontally just as a text. In this chapter we will learn about different groups of elements according to how they are laid out on the page.</p>
+  <p>First, let's figure out how one makes elements display one after the other vertically. We basically need to tell the browser, "Hey, we want a container which can be vertically stacked". Fortunately, this container tag is known as <span class="highlight">&lt;div&gt;</span>, and will sort of "break" content to new lines (like page breaks or line breaks in word processors).</p>
+  <p>To see how the <span class="highlight">&lt;div&gt;</span> elements work, let's use three of these and let's set them width, height, and background.</p>
+  <p>Under the assumptions given above, the HTML will look like this:</p>
+  <pre data-keep-tags="span"><code class="language-markup">&lt;div class="container"&gt;&lt;/div&gt;
+&lt;div class="container"&gt;&lt;/div&gt;
+&lt;div class="container"&gt;&lt;/div&gt;</code></pre>
+<p>In CSS, we write the class ".container" when referring to the &lt;div&gt; tag.</p>
+<pre data-keep-tags="span"><code class="language-css">.container {
+  width: 200px;
+  height: 200px;
+  background-color: blue;
+}</code></pre>
+<p>Let's see this in a browser:</p>
+<figure class="image"><img src="img/chapter10/blue-blocks.png" alt=""></figure>
+<p>Looks like a one big rectangle. What about separating &lt;div&gt; tags 10 pixels from the bottom?</p>
+<pre data-keep-tags="span"><code class="language-css">.container {
+  width: 200px;
+  height: 200px;
+  background-color: blue;
+  <span class="highlight">margin-bottom: 10px;</span>
+}</code></pre>
+<p>I added a margin-bottom property (highlighted above) to separate each &lt;div&gt; by 10 pixels from the bottom. Now it's time to check the effect in the browser:</p>
+<figure class="image"><img src="img/chapter10/blue-blocks-separated.png" alt=""></figure>
+<p>Great! The browser displays these "blocks" one by one, in contrast to our previous example of a web form where the elements appeared on the same line.</p>
+<p>Why is this different? When it comes to the display of tags, the browser recognizes three groups of elements:</p>
+<ul><li>inline</li>
+<li>block-level</li>
+<li>inline block-level</li></ul>
+
+<p><span class="highlight">Inline elements</span> do not cause transitions to a new line, but will be displayed one next to the other horizontally. <span class="highlight">Block elements</span> are set like blocks that stack on top of each other and will never display next to one another horizontally, unless we use magic tricks in CSS (which we'll learn in the next chapter). <span class="highlight">Inline blocks</span> will act as inline elements (elements are displayed next to each other), but differ in that they can be for instance resized. For example, the <span class="highlight">&lt;textarea&gt;</span> field can be displayed as a large rectangle, but it can take up space beyond a single line of text.
+
+<p>Let me share with you some examples of items that can be classified according to one of the three groups.</p>
+<ul><li>inline – <span class="highlight">&lt;span&gt;</span>, <span class="highlight">&lt;em&gt;</span>, <span class="highlight">&lt;strong&gt;</span>
+</li>
+<li>block-level – <span class="highlight">&lt;div&gt;</span>, <span class="highlight">&lt;p&gt;</span>, <span class="highlight">&lt;article&gt;</span></li>
+<li>inline block-level – <span class="highlight">&lt;input&gt;</span>, <span class="highlight">&lt;textarea&gt;</span></li></ul>
+
+<p>By default, inline elements have CSS <span class="highlight">display</span> property set to <span class="highlight">inline</span>. For block-level elements, its value is "block", and for inline block elements it's "inline-block". So you can explain that <span class="highlight">&lt;span&gt;</span> tag doesn't cause breaking the text to the new line, because it's an inline element which means in CSS it has a property "display" set to "inline". So, considering the below code:
+
+<pre data-keep-tags="span"><code>&lt;span&gt;one&lt;/span&gt; &lt;span&gt;two&lt;/span&gt; &lt;span&gt;three&lt;/span&gt;</code></pre>
+
+<p>The browser will display above code in one line:</p>
+<p><span>one</span> <span>two</span> <span>three</span></p>
+
+<p>However, it's possible to change this behavior by adding one line of CSS:</p>
+
+<pre><code class="language-css">span {
+  display: block;
+}</code></pre>
+
+<p>Now, our &lt;span&gt; tags display differently, each one in a new line, since we have set their display property to block:</p>
+
+<p>one</p><p>two</p><p>three</p>
+
+
+<p>For this example, we use <span class="highlight">&lt;div&gt;</span>. You may  wonder what this tag describes within the document. The short answer is nothing. We use the <span class="highlight">&lt;div&gt;</span> tag in cases where all other tags do not find a use for what we've put in the document. It is common, therefore, that the <span class="highlight">&lt;div&gt;</span> tag (in conjunction with other classes) is used to achieve different visual effects, as a result of it having no function for describing content. For example, if you want to make three vertical columns on our website, we might need an item that can separate some elements of inline or inline block elements. </p>
+
+<p>In general, it's a good idea to not overuse the <span class="highlight">&lt;div&gt;</span> tag if possible.</p>
+
+<p>With our new found knowledge of blocks, let's make up our form code so that the form fields and their descriptions are displayed nicely one on top of the other:</p>
+
+
+<pre><code>&lt;form&gt;
+  &lt;div&gt;
+    &lt;label for="nickname"&gt;Your nickname:&lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;input type="text" id="nickname" name="nickname"&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;label for="user-email"&gt;Your e-mail:&lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;input type="email" id="user-email" name="user-email"&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;label for="content"&gt;Content:&lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;textarea rows="10" cols="50" id="content"  name="content" &gt;&lt;/textarea&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;input type="submit" value="Add"&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+
+<p>It looks a bit more complicated, but the only thing we've done here is add <span class="highlight">&lt;div&gt;</span> tags to surround each of the elements on the form.</p>
+
+<p>Once again, let's look at a code comparison of our new code (left) against the old one (right):</p>
+
+<figure class="image"><img src="img/chapter10/code-comparison.png" alt=""></figure>
+<p>And now see how the new code displays in your browser!</p>
+<figure class="image"><img src="img/chapter10/form-preview.png" alt=""></figure>
+<p> Our form looks excellent now! </p>
+    <footer>
+        <p class="chapter-end-info">End Of Chapter 10</p>
+    </footer>
+  </article>
+  <script src="js/prism.js"></script>
+  <script src="js/prism-keep-tags.js"></script>
+  <nav class="book-nav" role="navigation">
+    <ul class="book-chapter-menu">
+        <li class="book-chapter-menu__item next-chapter"><span class="chapter-number">Chapter 11</span><a href="chapter11.html">Form Extras</a></li>
+        <li class="book-chapter-menu__item prev-chapter"><span class="chapter-number">Chapter 9</span><a href="chapter9.html">Forms in HTML5</a></li>
+    </ul>
+  </nav>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-600043-25', 'auto');
+  ga('send', 'pageview');
+
+</script></body>
+</html>
